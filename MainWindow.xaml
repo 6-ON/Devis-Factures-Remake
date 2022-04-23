@@ -4,12 +4,101 @@
                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                  xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                 Title="MainWindow"
-                 Width="800"
-                 Height="450"
+                 xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                 Width="1118"
+                 Height="600"
+                 MinWidth="1118"
+                 MinHeight="600"
                  WindowStartupLocation="CenterScreen"
-                 mc:Ignorable="d">
+                 mc:Ignorable="d"
+                 ShowTitleBar="True"
+                 Title="Devis Factures"
+                 >
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands>
+            <Button Content="{iconPacks:MaterialDesign Kind=Settings}" />
+            <Button Content="{iconPacks:Material Kind=CalculatorVariant}" />
+            <Button Content="{iconPacks:Material Kind=ClipboardEdit}" />
+            <Button Content="{iconPacks:Material Kind=Account}" />
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
+
     <Grid>
-        <!--  Your content  -->
+        <TabControl Style="{DynamicResource MahApps.Styles.TabControl.AnimatedSingleRow }">
+            <TabItem Header="Table De bord" >
+            </TabItem>
+            <TabItem Header="Devis">
+
+            </TabItem>
+            <TabItem Header="Factures">
+            </TabItem>
+            <TabItem Header="Avoirs">
+            </TabItem>
+            <TabItem Header="Clients">
+            </TabItem>
+            <TabItem Header="Produits">
+            </TabItem>
+            <TabItem Header="Stock">
+                <TabControl Style="{DynamicResource MahApps.Styles.TabControl.AnimatedSingleRow}">
+                    <TabItem Header="Stock" Style="{DynamicResource stocktabsstyle}">
+
+                    </TabItem>
+                    <TabItem Header="Commandes de Fournisseures" Style="{DynamicResource stocktabsstyle}">
+
+                    </TabItem>
+
+                </TabControl>
+            </TabItem>
+            <TabItem Header="B.Livration">
+            </TabItem>
+            
+        </TabControl>
+
+
+
+        
+        <!--styles-->
+        
+        
+        <Grid.Resources>
+            <!--tab headers styles-->
+            <Style TargetType="TabItem" BasedOn="{StaticResource MahApps.Styles.TabItem}">
+                <Setter Property="HeaderTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <Border Background="#eceff1"   CornerRadius="7,7,0,0" Padding="5" Cursor="Hand" Margin="-5,0">
+                                <TextBlock Text="{Binding}" FontWeight="SemiBold" FontSize="16" />
+                            </Border>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <!--stock tabs styles-->
+            <Style x:Key="stocktabsstyle" TargetType="TabItem" BasedOn="{StaticResource MahApps.Styles.TabItem}">
+                <Setter Property="HeaderTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <Border Background="#eceff1"   CornerRadius="0,0,7,7" Padding="5" Cursor="Hand" Margin="-5,0">
+                                <TextBlock Text="{Binding}" FontWeight="SemiBold" FontSize="16" />
+                            </Border>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="iconPacks:PackIconMaterialDesign">
+                <Setter Property="Height" Value="32"/>
+                <Setter Property="Width" Value="32"/>
+            </Style>
+            <Style x:Key="swkqq" TargetType="Button" BasedOn="{StaticResource MahApps.Styles.Button.Circle}" >
+                <!--<Setter Property="Foreground" Value="BlueViolet"/>-->
+                <Setter Property="Background" Value="White"/>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="true">
+                        <!--<Setter Property = "Background" Value=""/>-->
+                        <Setter Property = "Foreground" Value="White"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
     </Grid>
 </mah:MetroWindow>
