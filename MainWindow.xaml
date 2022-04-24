@@ -51,12 +51,9 @@
             </TabItem>
             <TabItem Header="B.Livration">
             </TabItem>
-            
+
         </TabControl>
 
-
-
-        
         <!--styles-->
         
         
@@ -66,7 +63,7 @@
                 <Setter Property="HeaderTemplate">
                     <Setter.Value>
                         <DataTemplate>
-                            <Border Background="#eceff1"   CornerRadius="7,7,0,0" Padding="5" Cursor="Hand" Margin="-5,0">
+                            <Border Background="#eceff1"   CornerRadius="7,7,0,0" Padding="20, 5" Cursor="Hand" Margin="-5,0">
                                 <TextBlock Text="{Binding}" FontWeight="SemiBold" FontSize="16" />
                             </Border>
                         </DataTemplate>
