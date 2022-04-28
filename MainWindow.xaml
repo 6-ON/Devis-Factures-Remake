@@ -5,6 +5,8 @@
                  xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                  xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                 xmlns:Tabs="clr-namespace:Devis_Factures_Remake.Tabs"
+                 xmlns:res="clr-namespace:Devis_Factures_Remake.Resources.Extras"
                  Width="1118"
                  Height="600"
                  MinWidth="1118"
@@ -16,16 +18,26 @@
                  >
     <mah:MetroWindow.RightWindowCommands>
         <mah:WindowCommands>
-            <Button Content="{iconPacks:MaterialDesign Kind=Settings}" />
-            <Button Content="{iconPacks:Material Kind=CalculatorVariant}" />
-            <Button Content="{iconPacks:Material Kind=ClipboardEdit}" />
-            <Button Content="{iconPacks:Material Kind=Account}" />
+            <Button Content="{iconPacks:MaterialDesign Kind=Settings}"  Name="btnSettings" MouseEnter="TooltipHandller" MouseLeave="TooltipCloseHandller"/>
+            <Button Content="{iconPacks:Material Kind=CalculatorVariant}" Name="btnCalc" MouseEnter="TooltipHandller" MouseLeave="TooltipCloseHandller"/>
+            <Button Content="{iconPacks:Material Kind=ClipboardEdit}" Name="btnNotes" MouseEnter="TooltipHandller" MouseLeave="TooltipCloseHandller"/>
+            <Button Content="{iconPacks:FontAwesome Kind=CalendarAltSolid}" Name="btnCalendar" MouseEnter="TooltipHandller" MouseLeave="TooltipCloseHandller"/>
+
         </mah:WindowCommands>
+
     </mah:MetroWindow.RightWindowCommands>
 
     <Grid>
+        <Popup x:Name="AltTooltip"
+                   AllowsTransparency="True">
+
+            <Grid>
+                <res:AltToolTip x:Name="Context"/>
+            </Grid>
+        </Popup>
         <TabControl Style="{DynamicResource MahApps.Styles.TabControl.AnimatedSingleRow }">
             <TabItem Header="Table De bord" >
+                <Tabs:Dashboard/>
             </TabItem>
             <TabItem Header="Devis">
 
@@ -37,6 +49,7 @@
             <TabItem Header="Clients">
             </TabItem>
             <TabItem Header="Produits">
+                <Tabs:ProduitsTab/>
             </TabItem>
             <TabItem Header="Stock">
                 <TabControl Style="{DynamicResource MahApps.Styles.TabControl.AnimatedSingleRow}">
@@ -54,10 +67,12 @@
 
         </TabControl>
 
-        <!--styles-->
         
+        <!--styles-->
+
         
         <Grid.Resources>
+
             <!--tab headers styles-->
             <Style TargetType="TabItem" BasedOn="{StaticResource MahApps.Styles.TabItem}">
                 <Setter Property="HeaderTemplate">
@@ -87,16 +102,7 @@
                 <Setter Property="Height" Value="32"/>
                 <Setter Property="Width" Value="32"/>
             </Style>
-            <Style x:Key="swkqq" TargetType="Button" BasedOn="{StaticResource MahApps.Styles.Button.Circle}" >
-                <!--<Setter Property="Foreground" Value="BlueViolet"/>-->
-                <Setter Property="Background" Value="White"/>
-                <Style.Triggers>
-                    <Trigger Property="IsMouseOver" Value="true">
-                        <!--<Setter Property = "Background" Value=""/>-->
-                        <Setter Property = "Foreground" Value="White"/>
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
         </Grid.Resources>
+
     </Grid>
 </mah:MetroWindow>

@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="Devis_Factures_Remake.Tabs.ProduitsTab"
+             xmlns:Extras="clr-namespace:Devis_Factures_Remake.Resources.Extras"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Devis_Factures_Remake.Tabs"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+
+             mc:Ignorable="d" 
+             d:DesignHeight="509" d:DesignWidth="1118">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <TextBox Style="{DynamicResource SearchTB}" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <ComboBox Style="{DynamicResource FileterCB}"></ComboBox>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+
+            <StackPanel Margin="20,0" VerticalAlignment="Center">
+                <Button Content="{iconPacks:Unicons Kind=Edit,Width=32,Height=32}" Name="btnCreateProduit"/>
+                <Button Content="{iconPacks:RemixIcon Kind=FilePaper2Fill,Width=32,Height=32}" Name="btnUpdateProduit"  />
+                <Button Content="{iconPacks:FontAwesome Kind=WalletSolid,Width=32,Height=32}" Name="btnDeleteProduit" />
+                <Button Content="{iconPacks:Material Kind=HandCoin,Width=32,Height=32}" Name="btnExportProduit" />
+            </StackPanel>
+        </Grid>
+        <Popup x:Name="AltTooltip"
+            AllowsTransparency="True"
+            HorizontalOffset="-30"      
+               >
+            <Grid>
+                <Extras:AltToolTip x:Name="Context"/>
+            </Grid>
+        </Popup>
+    </Grid>
+    <UserControl.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource MahApps.Styles.Button.Circle}">
+            <EventSetter Event="MouseEnter" Handler="TooltipHandller"/>
+            <EventSetter Event="MouseLeave" Handler="TooltipCloseHandller"/>
+            <Setter Property="Margin" Value="0,20,0,0"/>
+            <Setter Property="Height" Value="64"/>
+
+            <Setter Property="Width" Value="64"/>
+            <Setter Property="Foreground" Value="{StaticResource MahApps.Brushes.Accent}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.Setters>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Background" Value="{StaticResource MahApps.Brushes.Accent}"/>
+                    </Trigger.Setters>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="SearchTB" TargetType="TextBox" BasedOn="{StaticResource MahApps.Styles.TextBox.Search}">
+            <Setter Property="Width" Value="400"/>
+            <!--<Setter Property="Height" Value="1"/>-->
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="mah:TextBoxHelper.Watermark" Value="Rechercher"/>
+            <Setter Property="mah:TextBoxHelper.WatermarkAlignment" Value="Center"/>
+            <Setter Property="mah:TextBoxHelper.UseFloatingWatermark" Value="True" />
+            <Setter Property="mah:TextBoxHelper.SelectAllOnFocus" Value="True" />
+        </Style>
+        <Style x:Key="FileterCB" TargetType="ComboBox" BasedOn="{StaticResource MahApps.Styles.ComboBox}">
+            <Setter Property="Width" Value="400"/>
+            <!--<Setter Property="Height" Value="1"/>-->
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+
+        </Style>
+    </UserControl.Resources>
+</UserControl>

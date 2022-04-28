@@ -15,18 +15,18 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 
-namespace Devis_Factures_Remake
+namespace Devis_Factures_Remake.Tabs
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ProduitsTab.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow
+    public partial class ProduitsTab : UserControl
     {
         ResourceDictionary strings = new ResourceDictionary();
 
-        public MainWindow()
+        public ProduitsTab()
         {
-            strings.Source = new Uri(@"resources\dictionaries\strings.xaml", UriKind.Relative);
+            strings.Source = new Uri(@"/resources\dictionaries\strings.xaml", UriKind.Relative);
             InitializeComponent();
         }
         public void TooltipHandller(object sender, MouseEventArgs e)

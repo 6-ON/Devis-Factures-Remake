@@ -15,37 +15,44 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 
-namespace Devis_Factures_Remake
+namespace Devis_Factures_Remake.Tabs
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Dashboard.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow
+    public partial class Dashboard : UserControl
     {
         ResourceDictionary strings = new ResourceDictionary();
-
-        public MainWindow()
+        
+        public Dashboard()
         {
-            strings.Source = new Uri(@"resources\dictionaries\strings.xaml", UriKind.Relative);
             InitializeComponent();
+            strings.Source = new Uri(@"/resources\dictionaries\strings.xaml", UriKind.Relative);
         }
+
+
+
+
+
+
         public void TooltipHandller(object sender, MouseEventArgs e)
         {
             Button? button = sender as Button;
             if (button != null) { SetAltToolTip(button, strings[button.Name]); }
         }
-        private void TooltipCloseHandller(object sender, MouseEventArgs e)
+        private void TooltipCloseHandller(object sender ,MouseEventArgs e)
         {
             AltTooltip.Visibility = Visibility.Collapsed;
             AltTooltip.IsOpen = false;
         }
 
-        public void SetAltToolTip(Button target, object message)
+        public void SetAltToolTip(Button target,object message)
         {
             AltTooltip.PlacementTarget = target;
             AltTooltip.Placement = PlacementMode.Bottom;
             AltTooltip.IsOpen = true;
             Context.PopupText.Text = message.ToString();
         }
+
     }
 }

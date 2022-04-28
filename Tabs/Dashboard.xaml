@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="Devis_Factures_Remake.Tabs.Dashboard"
+             xmlns:local="clr-namespace:Accessibility;assembly=Accessibility"
+             xmlns:Extras="clr-namespace:Devis_Factures_Remake.Resources.Extras"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" 
+             d:DesignHeight="509" d:DesignWidth="1118">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="61.83*"/>
+            <ColumnDefinition Width="38.17*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="1" Margin="10px">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <GroupBox Header="Dernier documents utilise" Grid.Row="0">
+                <DataGrid VerticalAlignment="Top" Name="dgLastUsedDocs">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Width="1*"/>
+                        <DataGridTextColumn Header="Type" Width="1*"/>
+                        <DataGridTextColumn Header="Client" Width="1*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+                <Grid >
+                    <StackPanel >
+                        <TextBlock Text="Outils" FontWeight="SemiBold" FontSize="18" />
+                        <Separator Background="Black" Height="1" Opacity="0.3"  Margin="8 0 0 0 "/>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <!--BUTTONS TOOLS-->
+                                 <!--Row 1-->
+                    <Button Content="{iconPacks:Unicons Kind=Edit,Width=32,Height=32}" Name="btnCreateDevis"/>
+                    <Button Grid.Column="1" Content="{iconPacks:RemixIcon Kind=FilePaper2Fill,Width=32,Height=32}" Name="btnCreateFacture"  />
+                    <Button Grid.Column="2" Content="{iconPacks:FontAwesome Kind=WalletSolid,Width=32,Height=32}" Name="btnCreateAvoir" />
+                    <Button Grid.Column="3" Content="{iconPacks:Material Kind=HandCoin,Width=32,Height=32}" Name="btnCreateBL" />
+                                <!--Row 2-->
+                    <Button Grid.Row="1" Grid.Column="0" Content="{iconPacks:Material Kind=Package,Width=32,Height=32}" Name="btnCreateStock"  />
+                    <Button Grid.Row="1" Grid.Column="1" Content="{iconPacks:Material Kind=AccountTie,Width=32,Height=32}" Name="btnCreateClient" />
+                    <Button Grid.Row="1" Grid.Column="2" Content="{iconPacks:VaadinIcons Kind=Workplace,Width=32,Height=32}" Name="btnCreateFournisseuer" />
+                    <Button Grid.Row="1" Grid.Column="3" Content="{iconPacks:Material Kind=Gmail,Width=32,Height=32}" Name="btnAcessEmail"  />
+                                <!--Row 3-->
+                    <Button Grid.Row="2" Grid.Column="0" Content="{iconPacks:Material Kind=ClipboardEdit,Width=32,Height=32}" Name="btnNotes"  />
+                    <Button Grid.Row="2" Grid.Column="1" Content="{iconPacks:Material Kind=CalculatorVariant,Width=32,Height=32}" Name="btnCalc" />
+                    <Button Grid.Row="2" Grid.Column="2" Content="{iconPacks:FontAwesome Kind=CalendarAltSolid,Width=32,Height=32}" Name="btnCalendar" />
+                    <Button Grid.Row="2" Grid.Column="3" Content="{iconPacks:MaterialDesign Kind=Settings,Width=32,Height=32}" Name="btnSettings"  />
+                    <!--END TOOLS BUTTONS-->
+
+                    <Grid.Resources>
+                        <Style TargetType="Button" BasedOn="{StaticResource MahApps.Styles.Button.Circle}">
+                            <EventSetter Event="MouseEnter" Handler="TooltipHandller"/>
+                            <EventSetter Event="MouseLeave" Handler="TooltipCloseHandller"/>
+                            
+                            <Setter Property="Height" Value="64"/>
+                            
+                            <Setter Property="Width" Value="64"/>
+                            <Setter Property="Foreground" Value="{StaticResource MahApps.Brushes.Accent}"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Trigger.Setters>
+                                        <Setter Property="Foreground" Value="White"/>
+                                        <Setter Property="Background" Value="{StaticResource MahApps.Brushes.Accent}"/>
+                                    </Trigger.Setters>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Resources>
+                </Grid>
+
+            </Grid>
+        </Grid>
+        <Popup x:Name="AltTooltip"
+            AllowsTransparency="True"
+            HorizontalOffset="-30"      
+               >
+            <Grid>
+                <Extras:AltToolTip x:Name="Context"/>
+            </Grid>
+        </Popup>
+    </Grid>
+
+</UserControl>

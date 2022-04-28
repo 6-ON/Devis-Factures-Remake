@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Devis_Factures_Remake.Resources.Extras.AltToolTip"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Devis_Factures_Remake.Resources.Extras"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="300
+             ">
+    <Grid>
+
+        <!--draw the popup user control-->
+        <Border CornerRadius="7" Padding="10,2" Background="DimGray" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock x:Name="PopupText"
+                   Text="hello"
+                   FontSize="15"
+                   FontWeight="Light"
+                   Panel.ZIndex="1"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Foreground="Azure"
+                       >
+            </TextBlock>
+        </Border>
+
+        <!--reusable text-->
+
+
+    </Grid>
+
+    <!--animate the user control-->
+    <UserControl.Style>
+        <Style>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:0.5" From="0" To="1"/>
+                            <!--<DoubleAnimation Storyboard.TargetProperty="(FrameworkElement.RenderTransform).(TranslateTransform.Y)" Duration="00:00:02" From="0" To="400"/>-->
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <Trigger Property="FrameworkElement.Visibility" Value="Collapsed">
+                    <Setter Property="FrameworkElement.Opacity" Value="0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Style>
+</UserControl>

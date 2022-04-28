@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Devis_Factures_Remake
+namespace Devis_Factures_Remake.Resources.Extras
 {
     /// <summary>
-    /// Interaction logic for TableDeBord.xaml
+    /// Interaction logic for AltToolTip.xaml
     /// </summary>
-    public partial class TableDeBord : UserControl
+    public partial class AltToolTip : UserControl
     {
-        public TableDeBord()
+        public AltToolTip()
         {
             InitializeComponent();
         }
