@@ -9,13 +9,13 @@
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              mc:Ignorable="d" 
              d:DesignHeight="509" d:DesignWidth="1118">
-    <Grid Background="White">
+    <Grid Background="White" Margin="10px">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="61.83*"/>
             <ColumnDefinition Width="38.17*"/>
         </Grid.ColumnDefinitions>
         
-        <Grid Grid.Column="1" Margin="10px">
+        <Grid Grid.Column="1" >
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -97,7 +97,7 @@
         </Grid>
         <Popup x:Name="AltTooltip"
             AllowsTransparency="True"
-            HorizontalOffset="-30"      
+            HorizontalOffset="-20"      
                >
             <Grid>
                 <Extras:AltToolTip x:Name="Context"/>

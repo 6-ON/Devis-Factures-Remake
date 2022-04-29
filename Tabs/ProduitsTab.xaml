@@ -10,7 +10,7 @@
 
              mc:Ignorable="d" 
              d:DesignHeight="509" d:DesignWidth="1118">
-    <Grid Background="White">
+    <Grid Background="White" Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="auto"/>
@@ -31,20 +31,36 @@
                 <Grid Grid.Row="1">
                     <ComboBox Style="{DynamicResource FileterCB}"></ComboBox>
                 </Grid>
+            </Grid> 
+            <Grid Grid.Row="1">
+                <DataGrid VerticalAlignment="Top" Name="dgLastUsedDocs" Background="Gray" Height="410">
+                    <DataGrid.Columns >
+                        <DataGridTextColumn Header="{DynamicResource refProdCol}" Width="1*"/>
+                        <DataGridTextColumn Header="{DynamicResource desProdCol}" Width="1*"/>
+                        <DataGridTextColumn Header="{DynamicResource venteProdCol}" Width="1*"/>
+                        <DataGridTextColumn Header="{DynamicResource puttcProdCol}" Width="1*"/>
+                        <DataGridTextColumn Header="{DynamicResource acahtProdCol}" Width="1*"/>
+                        <DataGridTextColumn Header="{DynamicResource familleProdCol}" Width="1*"/>
+                        <DataGridTextColumn Header="{DynamicResource fornProdCol}" Width="1*"/>
+                        <DataGridTextColumn Header="{DynamicResource refForniProdCol}" Width="1*"/>
+                        
+                    </DataGrid.Columns>
+                </DataGrid>
             </Grid>
         </Grid>
         <Grid Grid.Column="1">
 
             <StackPanel Margin="20,0" VerticalAlignment="Center">
-                <Button Content="{iconPacks:Unicons Kind=Edit,Width=32,Height=32}" Name="btnCreateProduit"/>
-                <Button Content="{iconPacks:RemixIcon Kind=FilePaper2Fill,Width=32,Height=32}" Name="btnUpdateProduit"  />
-                <Button Content="{iconPacks:FontAwesome Kind=WalletSolid,Width=32,Height=32}" Name="btnDeleteProduit" />
-                <Button Content="{iconPacks:Material Kind=HandCoin,Width=32,Height=32}" Name="btnExportProduit" />
+
+                <Button Style="{DynamicResource btnCreteStyle}" Content="{iconPacks:Ionicons Kind=AddCircleiOS,Width=32,Height=32}" Name="btnCreateProduit" Click="btnCreateProduit_Click"/>
+                <Button Style="{DynamicResource btnUpdateStyle}" Content="{iconPacks:FontAwesome Kind=PenSolid,Width=32,Height=32}" Name="btnUpdateProduit"  />
+                <Button Style="{DynamicResource btnDeleteStyle}" Content="{iconPacks:Material Kind=Delete,Width=32,Height=32}" Name="btnDeleteProduit" />
+                <Button Style="{DynamicResource btnExportStyle}" Content="{iconPacks:Unicons Kind=Export,Width=32,Height=32}" Name="btnExportProduit" />
             </StackPanel>
         </Grid>
         <Popup x:Name="AltTooltip"
             AllowsTransparency="True"
-            HorizontalOffset="-30"      
+            HorizontalOffset="-20"      
                >
             <Grid>
                 <Extras:AltToolTip x:Name="Context"/>
@@ -52,24 +68,75 @@
         </Popup>
     </Grid>
     <UserControl.Resources>
-        <Style TargetType="Button" BasedOn="{StaticResource MahApps.Styles.Button.Circle}">
+        <Style x:Key="mainBtnStyle" TargetType="Button" BasedOn="{StaticResource MahApps.Styles.Button.Circle}">
             <EventSetter Event="MouseEnter" Handler="TooltipHandller"/>
             <EventSetter Event="MouseLeave" Handler="TooltipCloseHandller"/>
             <Setter Property="Margin" Value="0,20,0,0"/>
             <Setter Property="Height" Value="64"/>
 
             <Setter Property="Width" Value="64"/>
-            <Setter Property="Foreground" Value="{StaticResource MahApps.Brushes.Accent}"/>
+            
+        </Style>
+        <!--Btn Create Style-->
+        <Style TargetType="Button" x:Key="btnCreteStyle" BasedOn="{StaticResource mainBtnStyle}">
+            <Setter Property="Foreground" Value="#00e676"/>
+
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Trigger.Setters>
                         <Setter Property="Foreground" Value="White"/>
-                        <Setter Property="Background" Value="{StaticResource MahApps.Brushes.Accent}"/>
+                        <Setter Property="Background" Value="#00e676"/>
                     </Trigger.Setters>
                 </Trigger>
             </Style.Triggers>
         </Style>
-        <Style x:Key="SearchTB" TargetType="TextBox" BasedOn="{StaticResource MahApps.Styles.TextBox.Search}">
+        <!--Btn Update Style-->
+
+        <Style TargetType="Button" x:Key="btnUpdateStyle" BasedOn="{StaticResource mainBtnStyle}">
+            <Setter Property="Foreground" Value="#03a9f4"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.Setters>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Background" Value="#03a9f4"/>
+                    </Trigger.Setters>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!--Btn Delete Style-->
+
+        <Style TargetType="Button" x:Key="btnDeleteStyle" BasedOn="{StaticResource mainBtnStyle}">
+            <Setter Property="Foreground" Value="#d50000"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.Setters>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Background" Value="#d50000"/>
+                    </Trigger.Setters>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <!--Btn Export Style-->
+
+        <Style TargetType="Button" x:Key="btnExportStyle" BasedOn="{StaticResource mainBtnStyle}">
+            <Setter Property="Foreground" Value="#9e9e9e"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.Setters>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Background" Value="#9e9e9e"/>
+                    </Trigger.Setters>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+        <!--Search box Style-->
+        <Style x:Key="SearchTB" TargetType="TextBox"  BasedOn="{StaticResource MahApps.Styles.TextBox.Search}">
+            
             <Setter Property="Width" Value="400"/>
             <!--<Setter Property="Height" Value="1"/>-->
             <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -78,9 +145,11 @@
             <Setter Property="mah:TextBoxHelper.UseFloatingWatermark" Value="True" />
             <Setter Property="mah:TextBoxHelper.SelectAllOnFocus" Value="True" />
         </Style>
+        <!--Filter cmbx Style-->
         <Style x:Key="FileterCB" TargetType="ComboBox" BasedOn="{StaticResource MahApps.Styles.ComboBox}">
             <Setter Property="Width" Value="400"/>
             <!--<Setter Property="Height" Value="1"/>-->
+            <Setter Property="Margin" Value="0,10"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
 
         </Style>

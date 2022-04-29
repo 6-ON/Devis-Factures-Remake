@@ -47,5 +47,10 @@ namespace Devis_Factures_Remake.Tabs
             AltTooltip.IsOpen = true;
             Context.PopupText.Text = message.ToString();
         }
+
+        private void btnCreateProduit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

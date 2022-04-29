@@ -10,16 +10,18 @@
     <Grid>
 
         <!--draw the popup user control-->
-        <Border CornerRadius="7" Padding="10,2" Background="DimGray" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Border CornerRadius="7" Padding="10,2" Background="DimGray" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" >
             <TextBlock x:Name="PopupText"
                    Text="hello"
                    FontSize="15"
                    FontWeight="Light"
                    Panel.ZIndex="1"
+                   MaxWidth="100"
+                     TextWrapping="Wrap"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    Foreground="Azure"
-                       >
+                       TextAlignment="Center">
             </TextBlock>
         </Border>
 

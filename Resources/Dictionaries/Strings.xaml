@@ -2,20 +2,45 @@
   
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-  xmlns:system="clr-namespace:System;assembly=mscorlib">
+  xmlns:s="clr-namespace:System;assembly=mscorlib">
 
-    <system:String x:Key="btnCreateDevis">Créer un devis</system:String>
-    <system:String x:Key="btnCreateFacture">Créer un Facture</system:String>
-    <system:String x:Key="btnCreateAvoir">Créer un Avoir</system:String>
-    <system:String x:Key="btnCreateBL">Créer un Bon livraison</system:String>
-    <system:String x:Key="btnCreateStock">Créer un Stock</system:String>
-    <system:String x:Key="btnCreateClient">Créer un Client</system:String>
-    <system:String x:Key="btnCreateFournisseuer">Créer un Fournisseur</system:String>
-    <system:String x:Key="btnAcessEmail">acceder a email</system:String>
-    <system:String x:Key="btnNotes">Bloc Notes</system:String>
-    <system:String x:Key="btnCalc">Calculatrice</system:String>
-    <system:String x:Key="btnCalendar">Calendrier</system:String>
-    <system:String x:Key="btnSettings">Réglages</system:String>
+    <s:String x:Key="btnCreateDevis">Créer un devis</s:String>
+    <s:String x:Key="btnCreateFacture">Créer un Facture</s:String>
+    <s:String x:Key="btnCreateAvoir">Créer un Avoir</s:String>
+    <s:String x:Key="btnCreateBL">Créer un Bon livraison</s:String>
+    <s:String x:Key="btnCreateStock">Créer un Stock</s:String>
+    <s:String x:Key="btnCreateClient">Créer un Client</s:String>
+    <s:String x:Key="btnCreateFournisseuer">Créer un Fournisseur</s:String>
+    <s:String x:Key="btnAcessEmail">acceder a email</s:String>
+    <s:String x:Key="btnNotes">Bloc Notes</s:String>
+    <s:String x:Key="btnCalc">Calculatrice</s:String>
+    <s:String x:Key="btnCalendar">Calendrier</s:String>
+    <s:String x:Key="btnSettings">Réglages</s:String>
+    <!-- Produit Tab Bottuns -->
+    <s:String x:Key="btnCreateProduit">Créer un Produit</s:String>
+    <s:String x:Key="btnUpdateProduit">Éditer Produit</s:String>
+    <s:String x:Key="btnDeleteProduit">Supprimer les Produits sélectionnés</s:String>
+    <s:String x:Key="btnExportProduit">Éxporter un Produit</s:String>
+    <!--Produit Dgv Columns-->
+    <s:String x:Key="refProdCol">Référence</s:String>
+    <s:String x:Key="desProdCol">Désignation</s:String>
+    <s:String x:Key="venteProdCol">P.Vente</s:String>
+    <s:String x:Key="puttcProdCol">PUTTC</s:String>
+    <s:String x:Key="acahtProdCol">P.Achat</s:String>
+    <s:String x:Key="familleProdCol">Famille</s:String>
+    <s:String x:Key="fornProdCol">Fournisseur</s:String>
+    <s:String x:Key="refForniProdCol">Réf fourni</s:String>
+    <!--Client DGV Columns-->
+    <s:String x:Key="codeClientCol">Code</s:String>
+    <s:String x:Key="raisonSocialeClientCol">Raison Social</s:String>
+    <s:String x:Key="nomClientCol">Nom</s:String>
+    <s:String x:Key="PrénomClientCol">Prénom</s:String>
+    <s:String x:Key="adresse1ClientCol">Adresse1</s:String>
+    <s:String x:Key="adresse2ClientCol">Adresse2</s:String>
+    <s:String x:Key="codePostalClientCol">Code Postal</s:String>
+    <s:String x:Key="villeClientCol">Ville</s:String>
+    <s:String x:Key="statutClientCol">Status Client</s:String>
+    
     
 
 </ResourceDictionary>
