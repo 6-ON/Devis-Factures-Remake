@@ -4,9 +4,92 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Devis_Factures_Remake.Tabs"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:Extras="clr-namespace:Devis_Factures_Remake.Resources.Extras"
+
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             d:DesignHeight="509" d:DesignWidth="1118">
+    <Grid Background="White" Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <TextBox Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.SearchTB }" />
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <DataGrid  Name="dgDevis">
+                    <DataGrid.Columns >
+                        <DataGridTextColumn Header="{DynamicResource exer}" MinWidth="100" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource numDevis}" MinWidth="130" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource datedevis}" MinWidth="130" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource rsDevis}" MinWidth="100" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource cpDevis}" MinWidth="90" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource cityDevis}" MinWidth="100" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource thtDevis}" MinWidth="90" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource tttcDevis}" MinWidth="90" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource annDevis}" MinWidth="150" Binding="{Binding}"/>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+
+            <StackPanel Margin="20,0" VerticalAlignment="Center">
+
+                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnCreateStyle}" 
+                        Content="{iconPacks:Ionicons Kind=AddCircleiOS,Width=32,Height=32}" 
+                        Name="btnCreateDevis"
+                        />
+
+                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnUpdateStyle}" 
+                        Content="{iconPacks:FontAwesome Kind=PenSolid,Width=32,Height=32}" 
+                        Name="btnUpdateDevis"  
+                        />
+
+                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnDeleteStyle}" 
+                        Content="{iconPacks:Material Kind=Delete,Width=32,Height=32}" 
+                        Name="btnDeleteDevis" 
+                        />
+
+                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnExportStyle}" 
+                        Content="{iconPacks:Unicons Kind=Export,Width=32,Height=32}" 
+                        Name="btnExportDevis" 
+                        />
+                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnPrintStyle}" 
+                        Content="{iconPacks:Material Kind=Printer, Width=32,Height=32}" 
+                        Name="btnPrintDevis"
+                        
+                        />
+
+            </StackPanel>
+        </Grid>
+        <Popup x:Name="AltTooltip"
+            AllowsTransparency="True"
+            HorizontalOffset="-20"      
+               >
+            <Grid>
+                <Extras:AltToolTip x:Name="Context"/>
+            </Grid>
+        </Popup>
     </Grid>
+    <UserControl.Resources>
+        <Style TargetType="Button" >
+            <EventSetter Event="MouseEnter" Handler="TooltipHandller"/>
+            <EventSetter Event="MouseLeave" Handler="TooltipCloseHandller"/>
+        </Style>
+    </UserControl.Resources>
 </UserControl>

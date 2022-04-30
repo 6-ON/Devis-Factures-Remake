@@ -15,6 +15,7 @@
                  mc:Ignorable="d"
                  ShowTitleBar="True"
                  Title="Devis Factures"
+                 
                  >
     <mah:MetroWindow.RightWindowCommands>
         <mah:WindowCommands>
@@ -40,7 +41,7 @@
                 <Tabs:Dashboard/>
             </TabItem>
             <TabItem Header="Devis">
-
+                <Tabs:DevisTab/>
             </TabItem>
             <TabItem Header="Factures">
             </TabItem>
@@ -97,10 +98,6 @@
                         </DataTemplate>
                     </Setter.Value>
                 </Setter>
-            </Style>
-            <Style TargetType="iconPacks:PackIconMaterialDesign">
-                <Setter Property="Height" Value="32"/>
-                <Setter Property="Width" Value="32"/>
             </Style>
         </Grid.Resources>
 

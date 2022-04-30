@@ -3,7 +3,7 @@
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:s="clr-namespace:System;assembly=mscorlib">
-
+    <!--DashBoard buttons-->
     <s:String x:Key="btnCreateDevis">Créer un devis</s:String>
     <s:String x:Key="btnCreateFacture">Créer un Facture</s:String>
     <s:String x:Key="btnCreateAvoir">Créer un Avoir</s:String>
@@ -20,7 +20,7 @@
     <s:String x:Key="btnCreateProduit">Créer un Produit</s:String>
     <s:String x:Key="btnUpdateProduit">Éditer Produit</s:String>
     <s:String x:Key="btnDeleteProduit">Supprimer les Produits sélectionnés</s:String>
-    <s:String x:Key="btnExportProduit">Éxporter un Produit</s:String>
+    <s:String x:Key="btnExportProduit">Éxporter Les Produit</s:String>
     <!--Produit Dgv Columns-->
     <s:String x:Key="refProdCol">Référence</s:String>
     <s:String x:Key="desProdCol">Désignation</s:String>
@@ -30,6 +30,10 @@
     <s:String x:Key="familleProdCol">Famille</s:String>
     <s:String x:Key="fornProdCol">Fournisseur</s:String>
     <s:String x:Key="refForniProdCol">Réf fourni</s:String>
+    <!--Client tab Buttons-->
+    <s:String x:Key="btnUpdateClient">Éditer Produit</s:String>
+    <s:String x:Key="btnDeleteClient">Supprimer les Produits sélectionnés</s:String>
+    <s:String x:Key="btnExportClient">Éxporter Les Produit</s:String>
     <!--Client DGV Columns-->
     <s:String x:Key="codeClientCol">Code</s:String>
     <s:String x:Key="raisonSocialeClientCol">Raison Social</s:String>
@@ -40,7 +44,21 @@
     <s:String x:Key="codePostalClientCol">Code Postal</s:String>
     <s:String x:Key="villeClientCol">Ville</s:String>
     <s:String x:Key="statutClientCol">Status Client</s:String>
-    
+    <!--Devis Tab Buttons-->
+    <s:String x:Key="btnUpdateDevis">Éditer Devis</s:String>
+    <s:String x:Key="btnDeleteDevis">Supprimer les Devis sélectionnés</s:String>
+    <s:String x:Key="btnExportDevis">Éxporter Les Devis</s:String>
+    <s:String x:Key="btnPrintDevis">Éxporter Les Devis</s:String>
+    <!--Devis DG collumns-->
+    <s:String x:Key="exer">Exercice</s:String>
+    <s:String x:Key="numDevis">Numero</s:String>
+    <s:String x:Key="datedevis">Date</s:String>
+    <s:String x:Key="rsDevis">Raison Sociale</s:String>
+    <s:String x:Key="cpDevis">Code Postale</s:String>
+    <s:String x:Key="cityDevis">Ville</s:String>
+    <s:String x:Key="thtDevis">Total HT</s:String>
+    <s:String x:Key="tttcDevis">Total TTC</s:String>
+    <s:String x:Key="annDevis">Annotation</s:String>
     
 
 </ResourceDictionary>

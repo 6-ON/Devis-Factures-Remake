@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -13,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Controls.Primitives;
 using MahApps.Metro.Controls;
 
 namespace Devis_Factures_Remake.Tabs
@@ -28,6 +28,12 @@ namespace Devis_Factures_Remake.Tabs
         {
             strings.Source = new Uri(@"/resources\dictionaries\strings.xaml", UriKind.Relative);
             InitializeComponent();
+            //just for test scrolling
+            List<int> nums = new List<int>();
+            for (int i = 0; i < 100; ++i)
+                nums.Add(i);
+
+            dgProduits.ItemsSource = nums;
         }
         public void TooltipHandller(object sender, MouseEventArgs e)
         {
