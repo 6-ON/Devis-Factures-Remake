@@ -128,11 +128,26 @@
     <Style x:Key="Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DataGrid" TargetType="DataGrid" BasedOn="{StaticResource MahApps.Styles.DataGrid.Azure}">
         <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
         <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
-        <Setter Property="Background" Value="AntiqueWhite"/>
         <Setter Property="CanUserReorderColumns" Value="False"/>
         <Setter Property="ColumnHeaderHeight" Value="30"/>
+        <!--collumn header style-->
+        <Setter Property="ColumnHeaderStyle">
+            <Setter.Value>
+                <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource MahApps.Styles.DataGridColumnHeader.Azure}">
+                    <Style.Setters>
+                        <Setter Property="Background" Value="{DynamicResource MahApps.Brushes.Accent}"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Margin" Value="0"/>
+                    </Style.Setters>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkBlue"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Setter.Value>
+        </Setter>
 
-        <!--<Setter Property="sc"-->
     </Style>
 
     

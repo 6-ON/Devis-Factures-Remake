@@ -1,5 +1,4 @@
 ﻿<ResourceDictionary
-  
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:s="clr-namespace:System;assembly=mscorlib">
@@ -16,11 +15,15 @@
     <s:String x:Key="btnCalc">Calculatrice</s:String>
     <s:String x:Key="btnCalendar">Calendrier</s:String>
     <s:String x:Key="btnSettings">Réglages</s:String>
-    <!-- Produit Tab Bottuns -->
-    <s:String x:Key="btnCreateProduit">Créer un Produit</s:String>
-    <s:String x:Key="btnUpdateProduit">Éditer Produit</s:String>
-    <s:String x:Key="btnDeleteProduit">Supprimer les Produits sélectionnés</s:String>
-    <s:String x:Key="btnExportProduit">Éxporter Les Produit</s:String>
+    
+    
+    <!-- All Buttons -->
+    <s:String x:Key="btnCreate">Créer</s:String>
+    <s:String x:Key="btnUpdate">Éditer </s:String>
+    <s:String x:Key="btnDelete">Supprimer Les Elementes Selecttionee</s:String>
+    <s:String x:Key="btnExport">Éxporter Vers Exel</s:String>
+    <s:String x:Key="btnPrint">Imprimer</s:String>
+
     <!--Produit Dgv Columns-->
     <s:String x:Key="refProdCol">Référence</s:String>
     <s:String x:Key="desProdCol">Désignation</s:String>
@@ -30,25 +33,9 @@
     <s:String x:Key="familleProdCol">Famille</s:String>
     <s:String x:Key="fornProdCol">Fournisseur</s:String>
     <s:String x:Key="refForniProdCol">Réf fourni</s:String>
-    <!--Client tab Buttons-->
-    <s:String x:Key="btnUpdateClient">Éditer Produit</s:String>
-    <s:String x:Key="btnDeleteClient">Supprimer les Produits sélectionnés</s:String>
-    <s:String x:Key="btnExportClient">Éxporter Les Produit</s:String>
-    <!--Client DGV Columns-->
-    <s:String x:Key="codeClientCol">Code</s:String>
-    <s:String x:Key="raisonSocialeClientCol">Raison Social</s:String>
-    <s:String x:Key="nomClientCol">Nom</s:String>
-    <s:String x:Key="PrénomClientCol">Prénom</s:String>
-    <s:String x:Key="adresse1ClientCol">Adresse1</s:String>
-    <s:String x:Key="adresse2ClientCol">Adresse2</s:String>
-    <s:String x:Key="codePostalClientCol">Code Postal</s:String>
-    <s:String x:Key="villeClientCol">Ville</s:String>
-    <s:String x:Key="statutClientCol">Status Client</s:String>
-    <!--Devis Tab Buttons-->
-    <s:String x:Key="btnUpdateDevis">Éditer Devis</s:String>
-    <s:String x:Key="btnDeleteDevis">Supprimer les Devis sélectionnés</s:String>
-    <s:String x:Key="btnExportDevis">Éxporter Les Devis</s:String>
-    <s:String x:Key="btnPrintDevis">Éxporter Les Devis</s:String>
+    
+    
+    
     <!--Devis DG collumns-->
     <s:String x:Key="exer">Exercice</s:String>
     <s:String x:Key="numDevis">Numero</s:String>
@@ -60,5 +47,27 @@
     <s:String x:Key="tttcDevis">Total TTC</s:String>
     <s:String x:Key="annDevis">Annotation</s:String>
     
+
+    <!--Avoirs DG collumns-->
+    <s:String x:Key="numAvoir">Numero</s:String>
+    <s:String x:Key="dtCreation">Date de Creation</s:String>
+    <s:String x:Key="clientAvoir">Client</s:String>
+    <s:String x:Key="cpAvoir">Code Postale</s:String>
+    <s:String x:Key="cityAvoir">Ville</s:String>
+    <s:String x:Key="thtAvoir">Total HT</s:String>
+    <s:String x:Key="tttcAvoir">Total TTC</s:String>
+    <s:String x:Key="annAvoir">Annotation</s:String>
+
+    <!--Cliwnts DG collumns-->
+    <s:String x:Key="idClient">Identifiant</s:String>
+    <s:String x:Key="rsClient">Raison Sociale</s:String>
+    <s:String x:Key="nomClient">Nom</s:String>
+    <s:String x:Key="pnomClient">Prenom</s:String>
+    <s:String x:Key="adClient">Adresse</s:String>
+    <s:String x:Key="ad2Client">Adresse 2</s:String>
+    <s:String x:Key="cpClient">Code Postal</s:String>
+    <s:String x:Key="cityClient">Ville</s:String>
+    <s:String x:Key="stateClient">Status</s:String>
+
 
 </ResourceDictionary>

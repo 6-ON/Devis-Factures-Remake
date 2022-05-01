@@ -13,18 +13,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MahApps.Metro.Controls;
 
 namespace Devis_Factures_Remake.Tabs
 {
     /// <summary>
-    /// Interaction logic for DevisTab.xaml
+    /// Interaction logic for BLivrationTab.xaml
     /// </summary>
-    public partial class DevisTab : UserControl
+    public partial class BLivrationTab : UserControl
     {
         ResourceDictionary strings = new ResourceDictionary();
-
-        public DevisTab()
+        public BLivrationTab()
         {
             strings.Source = new Uri(@"resources\dictionaries\strings.xaml", UriKind.Relative);
             InitializeComponent();
@@ -33,7 +31,7 @@ namespace Devis_Factures_Remake.Tabs
             for (int i = 0; i < 100; ++i)
                 nums.Add(i);
 
-            dgDevis.ItemsSource = nums;
+            dgAvoirs.ItemsSource = nums;
         }
         public void TooltipHandller(object sender, MouseEventArgs e)
         {
@@ -53,7 +51,5 @@ namespace Devis_Factures_Remake.Tabs
             AltTooltip.IsOpen = true;
             Context.PopupText.Text = message.ToString();
         }
-
     }
-
 }

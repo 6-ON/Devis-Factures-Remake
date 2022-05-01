@@ -14,8 +14,9 @@
                 <ResourceDictionary  Source="/Resources/Dictionaries/Strings.xaml"/>
                 <!--styles-->
                 <ResourceDictionary  Source="/Resources/Styles/GlobalControlsStyles.xaml"/>
-                
             </ResourceDictionary.MergedDictionaries>
+
+           
         </ResourceDictionary>
     </Application.Resources>
 </Application>

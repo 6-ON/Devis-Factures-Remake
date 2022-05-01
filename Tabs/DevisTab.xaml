@@ -10,6 +10,8 @@
 
              mc:Ignorable="d" 
              d:DesignHeight="509" d:DesignWidth="1118">
+    <UserControl.Resources>
+    </UserControl.Resources>
     <Grid Background="White" Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -30,7 +32,7 @@
                 </Grid>
             </Grid>
             <Grid Grid.Row="1">
-                <DataGrid  Name="dgDevis">
+                <DataGrid  Name="dgDevis" Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DataGrid}">
                     <DataGrid.Columns >
                         <DataGridTextColumn Header="{DynamicResource exer}" MinWidth="100" Binding="{Binding}"/>
                         <DataGridTextColumn Header="{DynamicResource numDevis}" MinWidth="130" Binding="{Binding}"/>
@@ -48,31 +50,40 @@
         </Grid>
         <Grid Grid.Column="1">
 
-            <StackPanel Margin="20,0" VerticalAlignment="Center">
+            <StackPanel Margin="20,0,20,70" VerticalAlignment="Center">
 
                 <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnCreateStyle}" 
                         Content="{iconPacks:Ionicons Kind=AddCircleiOS,Width=32,Height=32}" 
-                        Name="btnCreateDevis"
+                        Name="btnCreate"
+                        MouseEnter="TooltipHandller"
+                        MouseLeave="TooltipCloseHandller"
                         />
 
                 <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnUpdateStyle}" 
                         Content="{iconPacks:FontAwesome Kind=PenSolid,Width=32,Height=32}" 
-                        Name="btnUpdateDevis"  
+                        Name="btnUpdate"
+                        MouseEnter="TooltipHandller"
+                        MouseLeave="TooltipCloseHandller"
                         />
 
                 <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnDeleteStyle}" 
                         Content="{iconPacks:Material Kind=Delete,Width=32,Height=32}" 
-                        Name="btnDeleteDevis" 
+                        Name="btnDelete" 
+                        MouseEnter="TooltipHandller"
+                        MouseLeave="TooltipCloseHandller"
                         />
 
                 <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnExportStyle}" 
                         Content="{iconPacks:Unicons Kind=Export,Width=32,Height=32}" 
-                        Name="btnExportDevis" 
+                        Name="btnExport"
+                        MouseEnter="TooltipHandller"
+                        MouseLeave="TooltipCloseHandller"
                         />
                 <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnPrintStyle}" 
                         Content="{iconPacks:Material Kind=Printer, Width=32,Height=32}" 
-                        Name="btnPrintDevis"
-                        
+                        Name="btnPrint"
+                        MouseEnter="TooltipHandller"
+                        MouseLeave="TooltipCloseHandller"
                         />
 
             </StackPanel>
@@ -86,10 +97,5 @@
             </Grid>
         </Popup>
     </Grid>
-    <UserControl.Resources>
-        <Style TargetType="Button" >
-            <EventSetter Event="MouseEnter" Handler="TooltipHandller"/>
-            <EventSetter Event="MouseLeave" Handler="TooltipCloseHandller"/>
-        </Style>
-    </UserControl.Resources>
+
 </UserControl>

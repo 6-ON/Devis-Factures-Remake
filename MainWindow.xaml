@@ -38,16 +38,19 @@
         </Popup>
         <TabControl Style="{DynamicResource MahApps.Styles.TabControl.AnimatedSingleRow }">
             <TabItem Header="Table De bord" >
-                <Tabs:Dashboard/>
+                <Tabs:Dashboard />
             </TabItem>
             <TabItem Header="Devis">
                 <Tabs:DevisTab/>
             </TabItem>
             <TabItem Header="Factures">
+                <Tabs:FactureTab/>
             </TabItem>
             <TabItem Header="Avoirs">
+                <Tabs:AvoirTab/>
             </TabItem>
             <TabItem Header="Clients">
+                <Tabs:ClientTab/>
             </TabItem>
             <TabItem Header="Produits">
                 <Tabs:ProduitsTab/>
@@ -64,6 +67,7 @@
                 </TabControl>
             </TabItem>
             <TabItem Header="B.Livration">
+                <Tabs:BLivrationTab/>
             </TabItem>
 
         </TabControl>
