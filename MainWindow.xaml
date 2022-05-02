@@ -58,10 +58,10 @@
             <TabItem Header="Stock">
                 <TabControl Style="{DynamicResource MahApps.Styles.TabControl.AnimatedSingleRow}">
                     <TabItem Header="Stock" Style="{DynamicResource stocktabsstyle}">
-
+                        <Tabs:StockTab/>
                     </TabItem>
                     <TabItem Header="Commandes de Fournisseures" Style="{DynamicResource stocktabsstyle}">
-
+                        <Tabs:CommandesFournisseursTab/>
                     </TabItem>
 
                 </TabControl>

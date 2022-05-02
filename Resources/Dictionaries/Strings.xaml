@@ -23,6 +23,7 @@
     <s:String x:Key="btnDelete">Supprimer Les Elementes Selecttionee</s:String>
     <s:String x:Key="btnExport">Éxporter Vers Exel</s:String>
     <s:String x:Key="btnPrint">Imprimer</s:String>
+    <s:String x:Key="btnFacturer">Facteur</s:String>
 
     <!--Produit Dgv Columns-->
     <s:String x:Key="refProdCol">Référence</s:String>
@@ -35,7 +36,6 @@
     <s:String x:Key="refForniProdCol">Réf fourni</s:String>
     
     
-    
     <!--Devis DG collumns-->
     <s:String x:Key="exer">Exercice</s:String>
     <s:String x:Key="numDevis">Numero</s:String>
@@ -46,7 +46,6 @@
     <s:String x:Key="thtDevis">Total HT</s:String>
     <s:String x:Key="tttcDevis">Total TTC</s:String>
     <s:String x:Key="annDevis">Annotation</s:String>
-    
 
     <!--Avoirs DG collumns-->
     <s:String x:Key="numAvoir">Numero</s:String>
