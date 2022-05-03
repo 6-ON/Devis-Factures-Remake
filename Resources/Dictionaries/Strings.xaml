@@ -90,4 +90,24 @@
     <s:String x:Key="encommand">En Commande</s:String>
     <s:String x:Key="UMouvent">U. Mouvent</s:String>
 
+
+    <!--Founisseurs DG Collumns-->
+    <s:String x:Key="codeForn">Code</s:String>
+    <s:String x:Key="rsForn">Raison Sociale</s:String>
+    <s:String x:Key="ad1Forn">Adress 1</s:String>
+    <s:String x:Key="ad2Forn">Adress 2</s:String>
+    <s:String x:Key="cpForn">Code Postal</s:String>
+    <s:String x:Key="cityForn">Ville</s:String>
+    <s:String x:Key="countryForn">Pays</s:String>
+    <s:String x:Key="mobileForn">Mobile</s:String>
+    <s:String x:Key="telForn">Tel</s:String>
+    <s:String x:Key="faxForn">Fax</s:String>
+    <s:String x:Key="emailForn">Email</s:String>
+    
+    
+    <!--Client Labels-->
+    <s:String x:Key="codelbl">code</s:String>
+
+
+
 </ResourceDictionary>

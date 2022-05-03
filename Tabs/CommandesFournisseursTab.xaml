@@ -35,9 +35,9 @@
                               SelectedIndex="0"
                               >
                         <ComboBoxItem Content="En Cours"/>
-                        <ComboBoxItem Content="Envoyee"/>
+                        <ComboBoxItem Content="Envoyée"/>
                         <ComboBoxItem Content="Recus"/>
-                        <ComboBoxItem Content="Archivee"/>
+                        <ComboBoxItem Content="Archivée"/>
                     </ComboBox>
 
                 </Grid>

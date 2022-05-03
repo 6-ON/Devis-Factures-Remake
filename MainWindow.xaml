@@ -37,6 +37,7 @@
         </mah:WindowCommands>
 
     </mah:MetroWindow.RightWindowCommands>
+    
 
     <Grid>
         <Popup x:Name="AltTooltip"
