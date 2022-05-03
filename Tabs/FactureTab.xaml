@@ -31,25 +31,34 @@
                 </Grid>
             </Grid>
             <Grid Grid.Row="1">
-                <DataGrid  Name="dgAvoirs" Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DataGrid}">
+                <DataGrid  Name="dgFactures" Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DataGrid}">
                     <DataGrid.Columns >
-                        <DataGridTextColumn Header="{DynamicResource idClient}" MinWidth="90" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource rsClient}" MinWidth="100" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource nomClient}" MinWidth="100" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource pnomClient}" MinWidth="100" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource adClient}" MinWidth="190" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource ad2Client}" MinWidth="190" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource cpClient}" MinWidth="100" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource exer}" MinWidth="90" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource numAvoir}" MinWidth="100" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource dtCreation}" MinWidth="100" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource dtechance}" MinWidth="100" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource validfacture}" MinWidth="100" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource clientAvoir}" MinWidth="150" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource cpAvoir}" MinWidth="100" Binding="{Binding}"/>
                         <DataGridTextColumn Header="{DynamicResource cityClient}" MinWidth="90" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource stateClient}" MinWidth="90" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource thtAvoir}" MinWidth="90" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource puttcProdCol}" MinWidth="90" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource totalreg}" MinWidth="90" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource restdu}" MinWidth="90" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource annAvoir}" MinWidth="190" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource reglib}" MinWidth="100" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource commentfacture}" MinWidth="100" Binding="{Binding}"/>
 
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
         </Grid>
         <Grid Grid.Column="1">
-
-            <StackPanel Margin="20,0,20,70" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="20,0,0,70" VerticalAlignment="Center">
 
                 <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnCreateStyle}" 
                         Content="{iconPacks:Ionicons Kind=AddCircleiOS,Width=32,Height=32}" 
@@ -80,6 +89,28 @@
                         />
 
             </StackPanel>
+            <StackPanel Grid.Column="1" Margin="20,0,20,70" VerticalAlignment="Center">
+                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnValidateStyle}" 
+                        Content="{iconPacks:BootstrapIcons Kind=Check,Width=32,Height=32}" 
+                        Name="btnValidate"
+                        MouseEnter="TooltipHandller"
+                        MouseLeave="TooltipCloseHandller"
+                        />
+                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnPrintStyle}" 
+                        Content="{iconPacks:Material Kind=Printer, Width=32,Height=32}" 
+                        Name="btnPrint"
+                        MouseEnter="TooltipHandller"
+                        MouseLeave="TooltipCloseHandller"
+                        />
+
+                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnCommandStyle}" 
+                        Content="{iconPacks:Unicons Kind=Bill, Width=32,Height=32}" 
+                        Name="btnReglemetnt"
+                        MouseEnter="TooltipHandller"
+                        MouseLeave="TooltipCloseHandller" Click="btnReglemetnt_Click"
+                        />
+            </StackPanel>
+
         </Grid>
         <Popup x:Name="AltTooltip"
             AllowsTransparency="True"

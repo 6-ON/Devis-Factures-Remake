@@ -34,26 +34,26 @@
                     <ComboBox Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.FileterCB }"
                               SelectedIndex="0"
                               >
-                        <ComboBoxItem Content="Tout Les Familles"/>
-                        <ComboBoxItem Content="Tout Les Familles"/>
-                        <ComboBoxItem Content="Tout Les Familles"/>
-                        <ComboBoxItem Content="Tout Les Familles"/>
+                        <ComboBoxItem Content="En Cours"/>
+                        <ComboBoxItem Content="Envoyee"/>
+                        <ComboBoxItem Content="Recus"/>
+                        <ComboBoxItem Content="Archivee"/>
                     </ComboBox>
 
                 </Grid>
             </Grid>
             <Grid Grid.Row="1">
-                <DataGrid  Name="dgProduits" Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DataGrid}">
+                <DataGrid  Name="dgCmdFournisseur" Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DataGrid}">
                     <DataGrid.Columns >
-                        <DataGridTextColumn Header="{DynamicResource refProdCol}" MinWidth="150" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource desProdCol}" MinWidth="150" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource venteProdCol}" MinWidth="90" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource puttcProdCol}" MinWidth="90" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource acahtProdCol}" MinWidth="90" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource familleProdCol}" MinWidth="150" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource fornProdCol}" MinWidth="150" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource refForniProdCol}" MinWidth="150" Binding="{Binding}"/>
-
+                        <DataGridTextColumn Header="{DynamicResource exer}" MinWidth="100" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource numAvoir}" MinWidth="150" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource dtCreation}" MinWidth="90" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource fornProdCol}" MinWidth="90" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource cpAvoir}" MinWidth="90" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource cityAvoir}" MinWidth="100" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource thtAvoir}" MinWidth="150" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource tttcAvoir}" MinWidth="150" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource annAvoir}" MinWidth="150" Binding="{Binding}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
@@ -62,25 +62,12 @@
 
             <StackPanel Margin="20,0,20,70" VerticalAlignment="Center">
 
-                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnCreateStyle}" 
-                        Content="{iconPacks:Ionicons Kind=AddCircleiOS,Width=32,Height=32}" 
-                        Name="btnCreate" 
-                        MouseEnter="TooltipHandller"
-                        MouseLeave="TooltipCloseHandller"
-                        />
-
                 <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnUpdateStyle}" 
                         Content="{iconPacks:FontAwesome Kind=PenSolid,Width=32,Height=32}" 
                         Name="btnUpdate"
                         MouseEnter="TooltipHandller"
                         MouseLeave="TooltipCloseHandller"
-                        />
-
-                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnDeleteStyle}" 
-                        Content="{iconPacks:Material Kind=Delete,Width=32,Height=32}" 
-                        Name="btnDelete"
-                        MouseEnter="TooltipHandller"
-                        MouseLeave="TooltipCloseHandller"
+                        Click="btnUpdate_Click"
                         />
 
                 <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnExportStyle}" 

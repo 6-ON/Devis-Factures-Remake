@@ -15,6 +15,7 @@
     <s:String x:Key="btnCalc">Calculatrice</s:String>
     <s:String x:Key="btnCalendar">Calendrier</s:String>
     <s:String x:Key="btnSettings">Réglages</s:String>
+    <s:String x:Key="btnValidate">Valider</s:String>
     
     
     <!-- All Buttons -->
@@ -23,7 +24,10 @@
     <s:String x:Key="btnDelete">Supprimer Les Elementes Selecttionee</s:String>
     <s:String x:Key="btnExport">Éxporter Vers Exel</s:String>
     <s:String x:Key="btnPrint">Imprimer</s:String>
-    <s:String x:Key="btnFacturer">Facteur</s:String>
+    <s:String x:Key="btnFacturer">Facturer</s:String>
+    <s:String x:Key="btnExamineProdut">Voir Produit</s:String>
+    <s:String x:Key="btnCommand">Commander</s:String>
+    <s:String x:Key="btnReglemetnt">Reglement</s:String>
 
     <!--Produit Dgv Columns-->
     <s:String x:Key="refProdCol">Référence</s:String>
@@ -68,5 +72,22 @@
     <s:String x:Key="cityClient">Ville</s:String>
     <s:String x:Key="stateClient">Status</s:String>
 
+     <!--DG Factures collumns-->
+    <s:String x:Key="dtechance"> Date Echéance</s:String>
+    <s:String x:Key="totalreg">Total Reglement</s:String>
+    <s:String x:Key="validfacture">Validee</s:String>
+    <s:String x:Key="restdu">Rest Du</s:String>
+    <s:String x:Key="reglib">Reg. Lib</s:String>
+    <s:String x:Key="commentfacture">g. Commentaire</s:String>
+  
+
+
+    <s:String x:Key="labelStock">Libelle</s:String>
+    <s:String x:Key="seuilStock">Seuil Alerte</s:String>
+    <s:String x:Key="seuilStockmax">Seuil Max</s:String>
+    <s:String x:Key="adressage">Adressage</s:String>
+    <s:String x:Key="quantity">Quatitee</s:String>
+    <s:String x:Key="encommand">En Commande</s:String>
+    <s:String x:Key="UMouvent">U. Mouvent</s:String>
 
 </ResourceDictionary>

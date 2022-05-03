@@ -33,7 +33,7 @@ namespace Devis_Factures_Remake.Tabs
             for (int i = 0; i < 100; ++i)
                 nums.Add(i);
 
-            dgProduits.ItemsSource = nums;
+            dgCmdFournisseur.ItemsSource = nums;
         }
         public void TooltipHandller(object sender, MouseEventArgs e)
         {
@@ -54,7 +54,7 @@ namespace Devis_Factures_Remake.Tabs
             Context.PopupText.Text = message.ToString();
         }
 
-        private void btnCreateProduit_Click(object sender, RoutedEventArgs e)
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
 
         }

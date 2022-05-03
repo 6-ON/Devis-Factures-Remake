@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using MahApps.Metro.Controls;
 namespace Devis_Factures_Remake.Tabs
 {
     /// <summary>
@@ -31,7 +31,7 @@ namespace Devis_Factures_Remake.Tabs
             for (int i = 0; i < 100; ++i)
                 nums.Add(i);
 
-            dgAvoirs.ItemsSource = nums;
+            dgStock.ItemsSource = nums;
         }
         public void TooltipHandller(object sender, MouseEventArgs e)
         {
@@ -50,6 +50,25 @@ namespace Devis_Factures_Remake.Tabs
             AltTooltip.Placement = PlacementMode.Bottom;
             AltTooltip.IsOpen = true;
             Context.PopupText.Text = message.ToString();
+        }
+
+        private void btnCreate_Click(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            object obj = parentWindow.FindName("testfl");
+            Flyout flyout = (Flyout)obj;
+            flyout.Content = new FLayouts.StockOverview();
+            flyout.IsOpen = !flyout.IsOpen;
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            object obj = parentWindow.FindName("testfl");
+            Flyout flyout = (Flyout)obj;
+            flyout.Content = new FLayouts.StockOverview();
+            flyout.Header = "Stock";
+            flyout.IsOpen = !flyout.IsOpen;
         }
     }
 }

@@ -32,7 +32,7 @@ namespace Devis_Factures_Remake.Tabs
             for (int i = 0; i < 100; ++i)
                 nums.Add(i);
 
-            dgAvoirs.ItemsSource = nums;
+            dgClient.ItemsSource = nums;
         }
         public void TooltipHandller(object sender, MouseEventArgs e)
         {

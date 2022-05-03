@@ -14,15 +14,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Devis_Factures_Remake.Tabs
+namespace Devis_Factures_Remake.FLayouts
 {
     /// <summary>
-    /// Interaction logic for BLivrationTab.xaml
+    /// Interaction logic for StockOverview.xaml
     /// </summary>
-    public partial class BLivrationTab : UserControl
+    public partial class StockOverview : UserControl
     {
         ResourceDictionary strings = new ResourceDictionary();
-        public BLivrationTab()
+        public StockOverview()
         {
             strings.Source = new Uri(@"resources\dictionaries\strings.xaml", UriKind.Relative);
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace Devis_Factures_Remake.Tabs
             for (int i = 0; i < 100; ++i)
                 nums.Add(i);
 
-            dgBL.ItemsSource = nums;
+            dgStockProsuits.ItemsSource = nums;
         }
         public void TooltipHandller(object sender, MouseEventArgs e)
         {

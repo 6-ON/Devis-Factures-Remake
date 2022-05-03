@@ -29,20 +29,9 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                 <Grid>
                     <TextBox Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.SearchTB }" />
                 </Grid>
-                <Grid Grid.Row="1">
-                    <ComboBox Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.FileterCB }"
-                              SelectedIndex="0"
-                              >
-                        <ComboBoxItem Content="Tout Les Familles"/>
-                        <ComboBoxItem Content="Tout Les Familles"/>
-                        <ComboBoxItem Content="Tout Les Familles"/>
-                        <ComboBoxItem Content="Tout Les Familles"/>
-                    </ComboBox>
-
-                </Grid>
             </Grid>
             <Grid Grid.Row="1">
-                <DataGrid  Name="dgAvoirs" Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DataGrid}">
+                <DataGrid  Name="dgBL" Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DataGrid}">
                     <DataGrid.Columns >
                         <DataGridTextColumn Header="{DynamicResource exer}" MinWidth="100" Binding="{Binding}"/>
                         <DataGridTextColumn Header="{DynamicResource numAvoir}" MinWidth="130" Binding="{Binding}"/>

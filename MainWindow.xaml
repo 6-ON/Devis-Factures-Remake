@@ -17,6 +17,16 @@
                  Title="Devis Factures"
                  
                  >
+    <mah:MetroWindow.Flyouts>
+        <mah:FlyoutsControl>
+            <mah:Flyout Theme="Light"
+                        HorizontalContentAlignment="Stretch"
+                        AnimateOpacity="True"
+                        CloseButtonIsCancel="True"
+                        Position="Right"
+                        x:Name="testfl"></mah:Flyout>
+        </mah:FlyoutsControl>
+    </mah:MetroWindow.Flyouts>
     <mah:MetroWindow.RightWindowCommands>
         <mah:WindowCommands>
             <Button Content="{iconPacks:MaterialDesign Kind=Settings}"  Name="btnSettings" MouseEnter="TooltipHandller" MouseLeave="TooltipCloseHandller"/>

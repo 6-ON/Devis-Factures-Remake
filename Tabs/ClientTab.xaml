@@ -31,7 +31,7 @@
                 </Grid>
             </Grid>
             <Grid Grid.Row="1">
-                <DataGrid  Name="dgAvoirs" Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DataGrid}">
+                <DataGrid  Name="dgClient" Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DataGrid}">
                     <DataGrid.Columns >
                         <DataGridTextColumn Header="{DynamicResource idClient}" MinWidth="90" Binding="{Binding}"/>
                         <DataGridTextColumn Header="{DynamicResource rsClient}" MinWidth="100" Binding="{Binding}"/>
