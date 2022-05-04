@@ -13,54 +13,43 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MahApps.Metro.Controls;
 
-namespace Devis_Factures_Remake.Tabs
+namespace Devis_Factures_Remake.FLayouts
 {
     /// <summary>
-    /// Interaction logic for Dashboard.xaml
+    /// Interaction logic for FournisseursFL.xaml
     /// </summary>
-    public partial class Dashboard : UserControl
+    public partial class FournisseursFL : UserControl
     {
         ResourceDictionary strings = new ResourceDictionary();
-        
-        public Dashboard()
+        public FournisseursFL()
         {
+            strings.Source = new Uri(@"resources\dictionaries\strings.xaml", UriKind.Relative);
             InitializeComponent();
-            strings.Source = new Uri(@"/resources\dictionaries\strings.xaml", UriKind.Relative);
+            //just for test scrolling
+            List<int> nums = new List<int>();
+            for (int i = 0; i < 100; ++i)
+                nums.Add(i);
+
+            dgFournisseur.ItemsSource = nums;
         }
-
-
-
-
-
-
         public void TooltipHandller(object sender, MouseEventArgs e)
         {
             Button? button = sender as Button;
             if (button != null) { SetAltToolTip(button, strings[button.Name]); }
         }
-        private void TooltipCloseHandller(object sender ,MouseEventArgs e)
+        private void TooltipCloseHandller(object sender, MouseEventArgs e)
         {
             AltTooltip.Visibility = Visibility.Collapsed;
             AltTooltip.IsOpen = false;
         }
 
-        public void SetAltToolTip(Button target,object message)
+        public void SetAltToolTip(Button target, object message)
         {
             AltTooltip.PlacementTarget = target;
             AltTooltip.Placement = PlacementMode.Bottom;
             AltTooltip.IsOpen = true;
             Context.PopupText.Text = message.ToString();
-        }
-
-        private void btnCreate_Click(object sender, RoutedEventArgs e)
-        {
-            Window parentWindow = Window.GetWindow(this);
-            object obj = parentWindow.FindName("testfl");
-            Flyout flyout = (Flyout)obj;
-            flyout.Content = new FLayouts.FournisseursFL();
-            flyout.IsOpen = !flyout.IsOpen;
         }
     }
 }

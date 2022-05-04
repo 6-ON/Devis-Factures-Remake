@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="Devis_Factures_Remake.FLayouts.FournisseursFL"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Devis_Factures_Remake.FLayouts"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:Extras="clr-namespace:Devis_Factures_Remake.Resources.Extras"
+             mc:Ignorable="d" 
+             d:DesignHeight="509" d:DesignWidth="1118">
+    <Grid Background="White" Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <TextBox Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.SearchTB }" />
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <DataGrid Name="dgFournisseur" Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DataGrid}">
+                    <DataGrid.Columns >
+                        <DataGridTextColumn Header="{DynamicResource codeForn}" MinWidth="100" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource rsForn}" MinWidth="130" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource ad1Forn}" MinWidth="130" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource ad2Forn}" MinWidth="100" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource cpForn}" MinWidth="90" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource cityForn}" MinWidth="100" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource countryForn}" MinWidth="90" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource mobileForn}" MinWidth="90" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource telForn}" MinWidth="150" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource faxForn}" MinWidth="150" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource emailForn}" MinWidth="150" Binding="{Binding}"/>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+
+            <StackPanel Margin="20,0,20,70" VerticalAlignment="Center">
+
+                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnCreateStyle}" 
+                        Content="{iconPacks:Ionicons Kind=AddCircleiOS,Width=32,Height=32}" 
+                        Name="btnCreate"
+                        MouseEnter="TooltipHandller"
+                        MouseLeave="TooltipCloseHandller"
+                        />
+
+                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnUpdateStyle}" 
+                        Content="{iconPacks:FontAwesome Kind=PenSolid,Width=32,Height=32}" 
+                        Name="btnUpdate"
+                        MouseEnter="TooltipHandller"
+                        MouseLeave="TooltipCloseHandller"
+                        />
+
+                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnDeleteStyle}" 
+                        Content="{iconPacks:Material Kind=Delete,Width=32,Height=32}" 
+                        Name="btnDelete" 
+                        MouseEnter="TooltipHandller"
+                        MouseLeave="TooltipCloseHandller"
+                        />
+
+                <!--<Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnUpdateStyle}" 
+                        Content="{iconPacks:Material Kind=FeatureSearch,Width=32,Height=32}" 
+                        Name="btnExamineProdut"
+                        MouseEnter="TooltipHandller"
+                        MouseLeave="TooltipCloseHandller"
+                        />
+
+                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnDeleteStyle}" 
+                        Content="{iconPacks:Material Kind=Delete,Width=32,Height=32}" 
+                        Name="btnDelete" 
+                        MouseEnter="TooltipHandller"
+                        MouseLeave="TooltipCloseHandller"
+                        />
+
+                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnCommandStyle}" 
+                        Content="{iconPacks:Material Kind=BasketPlus,Width=32,Height=32}" 
+                        Name="btnCommand"
+                        MouseEnter="TooltipHandller"
+                        MouseLeave="TooltipCloseHandller"
+                        />-->
+
+            </StackPanel>
+        </Grid>
+
+        <Popup x:Name="AltTooltip"
+            AllowsTransparency="True"
+            HorizontalOffset="-20"      
+               >
+            <Grid>
+                <Extras:AltToolTip x:Name="Context"/>
+            </Grid>
+        </Popup>
+    </Grid>
+
+</UserControl>

@@ -28,6 +28,8 @@
     <s:String x:Key="btnExamineProdut">Voir Produit</s:String>
     <s:String x:Key="btnCommand">Commander</s:String>
     <s:String x:Key="btnReglemetnt">Reglement</s:String>
+    <s:String x:Key="btnSave">Valider</s:String>
+    <s:String x:Key="btnCancel">Fermer</s:String>
 
     <!--Produit Dgv Columns-->
     <s:String x:Key="refProdCol">Référence</s:String>
@@ -103,10 +105,29 @@
     <s:String x:Key="telForn">Tel</s:String>
     <s:String x:Key="faxForn">Fax</s:String>
     <s:String x:Key="emailForn">Email</s:String>
+
+
+    <!--ClientLbls-->
+    <s:String x:Key="DN">Date de naissance</s:String>
+    <s:String x:Key="Civilite">Civilité</s:String>
+    <s:String x:Key="Genre">Genre</s:String>
+    <s:String x:Key="URL">URL</s:String>
+    <s:String x:Key="Activite">Activité</s:String>
+    <s:String x:Key="Siret">Siret</s:String>
+    <s:String x:Key="TVAIntra">TVA Intra</s:String>
     
+    <!--group box-->
+    <s:String x:Key="infoPerBx">Info Personnelle</s:String>
+    <s:String x:Key="contactBx">Contact</s:String>
     
-    <!--Client Labels-->
-    <s:String x:Key="codelbl">code</s:String>
+    <!--Other lbls-->
+    <s:String x:Key="Tarif">Tarif</s:String>
+    <s:String x:Key="Tarif">Tarif</s:String>
+    <s:String x:Key="MargeHT">Marge HT</s:String>
+    <s:String x:Key="VenteHT">Vente  HT</s:String>
+    <s:String x:Key="VenteHTinPer">Marge HT en %</s:String>
+
+
 
 
 
