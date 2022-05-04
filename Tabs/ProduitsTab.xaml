@@ -66,14 +66,14 @@
                         Content="{iconPacks:Ionicons Kind=AddCircleiOS,Width=32,Height=32}" 
                         Name="btnCreate" 
                         MouseEnter="TooltipHandller"
-                        MouseLeave="TooltipCloseHandller"
+                        MouseLeave="TooltipCloseHandller" Click="btnCreate_Click"
                         />
                 
                 <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnUpdateStyle}" 
                         Content="{iconPacks:FontAwesome Kind=PenSolid,Width=32,Height=32}" 
                         Name="btnUpdate"
                         MouseEnter="TooltipHandller"
-                        MouseLeave="TooltipCloseHandller"
+                        MouseLeave="TooltipCloseHandller" Click="btnUpdate_Click"
                         />
                 
                 <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnDeleteStyle}" 
