@@ -19,6 +19,7 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <Style TargetType="DatePicker" BasedOn="{StaticResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DatePickerStyle}"/>
     </UserControl.Resources>
     <Grid Background="White" Margin="10,10,10,5">
         <Grid.ColumnDefinitions>
@@ -31,7 +32,7 @@
             <RowDefinition/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
-        <GroupBox Header="{DynamicResource seuilStock}" Grid.RowSpan="3" Margin="0,0,5,0">
+        <GroupBox Header="{DynamicResource infoPerBx}" Grid.RowSpan="3" Margin="0,0,5,0">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <Grid >
                     <Grid.RowDefinitions>
@@ -46,51 +47,54 @@
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
                     <TextBox Grid.Row="0"  
-                     mah:TextBoxHelper.Watermark="{DynamicResource codelbl}" 
+                     mah:TextBoxHelper.Watermark="{DynamicResource codeForn}" 
                      />
                     <ComboBox Grid.Row="1" 
                               Margin="5"
-                              mah:TextBoxHelper.Watermark="{DynamicResource cityAvoir}"
+                              mah:TextBoxHelper.Watermark="{DynamicResource Civilite}"
                               
                               >
                     </ComboBox>
                     <TextBox Grid.Row="2"  
-                     mah:TextBoxHelper.Watermark="{DynamicResource codelbl}" 
+                     mah:TextBoxHelper.Watermark="{DynamicResource rsClient}" 
                      />
                     <TextBox Grid.Row="3"  
-                     mah:TextBoxHelper.Watermark="{DynamicResource codelbl}" 
+                     mah:TextBoxHelper.Watermark="{DynamicResource nomClient}" 
                      />
                     <TextBox Grid.Row="4"  
-                     mah:TextBoxHelper.Watermark="{DynamicResource codelbl}" 
+                     mah:TextBoxHelper.Watermark="{DynamicResource pnomClient}" 
                      />
                     <TextBox Grid.Row="5"  
-                     mah:TextBoxHelper.Watermark="{DynamicResource codelbl}" 
+                     mah:TextBoxHelper.Watermark="{DynamicResource adClient}" 
                      />
                     <TextBox Grid.Row="6"  
-                     mah:TextBoxHelper.Watermark="{DynamicResource codelbl}" 
+                     mah:TextBoxHelper.Watermark="{DynamicResource ad2Client}" 
                      />
                     <TextBox Grid.Row="7"  
-                     mah:TextBoxHelper.Watermark="{DynamicResource codelbl}" 
+                     mah:TextBoxHelper.Watermark="{DynamicResource ad3Client}" 
                      />
                     <TextBox Grid.Row="8"  
-                     mah:TextBoxHelper.Watermark="{DynamicResource codelbl}" 
+                     mah:TextBoxHelper.Watermark="{DynamicResource cpClient}" 
                      />
                     <ComboBox Grid.Row="9" 
                               Margin="5"
-                              mah:TextBoxHelper.Watermark="{DynamicResource cityAvoir}"
+                              mah:TextBoxHelper.Watermark="{DynamicResource cityClient}"
                               >
                     </ComboBox>
                     <TextBox Grid.Row="10"  
-                     mah:TextBoxHelper.Watermark="{DynamicResource codelbl}" 
+                     mah:TextBoxHelper.Watermark="{DynamicResource countryForn}" 
                      />
+                    <DatePicker Grid.Row="11" />
                 </Grid>
             </ScrollViewer>
         </GroupBox>
 
 
-        <GroupBox Grid.Column="1" Grid.RowSpan="2" Header="{DynamicResource ad1Forn}">
+        <GroupBox Grid.Column="1" Grid.RowSpan="2" Header="{DynamicResource contactBx}">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -102,28 +106,28 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <TextBox Grid.Row="0"   
-                     mah:TextBoxHelper.Watermark="{DynamicResource codelbl}" 
+                     mah:TextBoxHelper.Watermark="{DynamicResource telForn}" 
                      />
                     <TextBox Grid.Row="1"  
-                     mah:TextBoxHelper.Watermark="{DynamicResource codelbl}" 
+                     mah:TextBoxHelper.Watermark="{DynamicResource mobileForn}" 
                      />
                     <TextBox Grid.Row="2"  
-                     mah:TextBoxHelper.Watermark="{DynamicResource codelbl}" 
+                     mah:TextBoxHelper.Watermark="{DynamicResource faxForn}" 
                      />
                     <TextBox Grid.Row="3"  
-                     mah:TextBoxHelper.Watermark="{DynamicResource codelbl}" 
+                     mah:TextBoxHelper.Watermark="{DynamicResource emailForn}" 
                      />
                     <TextBox Grid.Row="4"  
-                     mah:TextBoxHelper.Watermark="{DynamicResource codelbl}" 
+                     mah:TextBoxHelper.Watermark="{DynamicResource URL}" 
                      />
                     <TextBox Grid.Row="5"  
-                     mah:TextBoxHelper.Watermark="{DynamicResource codelbl}" 
+                     mah:TextBoxHelper.Watermark="{DynamicResource Activite}" 
                      
                              />
                 </Grid>
             </ScrollViewer>
         </GroupBox>
-        <GroupBox Header="d" Grid.Row="2" Grid.Column="1">
+        <GroupBox Header="plus" Grid.Row="2" Grid.Column="1">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -132,14 +136,14 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <TextBox  Grid.Row="0"
-                     mah:TextBoxHelper.Watermark="{DynamicResource codelbl}" 
+                     mah:TextBoxHelper.Watermark="{DynamicResource Siret}" 
                      />
                     <TextBox  Grid.Row="1"
-                     mah:TextBoxHelper.Watermark="{DynamicResource codelbl}" 
+                     mah:TextBoxHelper.Watermark="{DynamicResource codeAPE}" 
                      />
                     <ComboBox Grid.Row="2"
                               Margin="5"
-                              mah:TextBoxHelper.Watermark="{DynamicResource cityAvoir}"
+                              mah:TextBoxHelper.Watermark="{DynamicResource TVAIntra}"
                               
                               >
                         <ComboBoxItem Content="test"/>

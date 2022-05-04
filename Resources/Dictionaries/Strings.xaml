@@ -70,6 +70,7 @@
     <s:String x:Key="pnomClient">Prenom</s:String>
     <s:String x:Key="adClient">Adresse</s:String>
     <s:String x:Key="ad2Client">Adresse 2</s:String>
+    <s:String x:Key="ad3Client">Adresse 3</s:String>
     <s:String x:Key="cpClient">Code Postal</s:String>
     <s:String x:Key="cityClient">Ville</s:String>
     <s:String x:Key="stateClient">Status</s:String>
@@ -114,6 +115,7 @@
     <s:String x:Key="URL">URL</s:String>
     <s:String x:Key="Activite">Activité</s:String>
     <s:String x:Key="Siret">Siret</s:String>
+    <s:String x:Key="codeAPE">Code APE</s:String>
     <s:String x:Key="TVAIntra">TVA Intra</s:String>
     
     <!--group box-->
@@ -121,7 +123,6 @@
     <s:String x:Key="contactBx">Contact</s:String>
     
     <!--Other lbls-->
-    <s:String x:Key="Tarif">Tarif</s:String>
     <s:String x:Key="Tarif">Tarif</s:String>
     <s:String x:Key="MargeHT">Marge HT</s:String>
     <s:String x:Key="VenteHT">Vente  HT</s:String>
