@@ -9,93 +9,143 @@
              xmlns:Extras="clr-namespace:Devis_Factures_Remake.Resources.Extras"
              mc:Ignorable="d" 
              d:DesignHeight="509" d:DesignWidth="1118">
-    <Grid Background="White" Margin="10">
+    <UserControl.Resources>
+        <Style TargetType="TextBox" BasedOn="{StaticResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.NormalTextBox}">
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+
+        </Style>
+        <Style TargetType="ComboBox" BasedOn="{StaticResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.FileterCB}">
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Margin" Value="5"/>
+
+
+        </Style>
+        <Style x:Key="btnSave" TargetType="Button" BasedOn="{StaticResource MahApps.Styles.Button.Flat}">
+            <Style.Triggers>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="{DynamicResource MahApps.Brushes.Accent}"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="DatePicker" BasedOn="{StaticResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DatePickerStyle}">
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Margin" Value="5"/>
+
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="White" Margin="10,10,10,5">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition />
             <ColumnDefinition/>
-            <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto" />
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid>
-                    <TextBox Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.SearchTB }" />
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="{DynamicResource infoPerBx}" Grid.RowSpan="2" Margin="0,0,5,0">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Row="0"  
+                         mah:TextBoxHelper.Watermark="{DynamicResource codeForn}" 
+                         />
+                    <TextBox Grid.Row="0"  Grid.Column="1"
+                     mah:TextBoxHelper.Watermark="{DynamicResource rsClient}" 
+                     />
+                    <TextBox Grid.Row="1"  Grid.Column="1" 
+                     mah:TextBoxHelper.Watermark="{DynamicResource nomClient}" 
+                     />
+                    <TextBox Grid.Row="1"  
+                     mah:TextBoxHelper.Watermark="{DynamicResource pnomClient}" 
+                     />
+                    <TextBox Grid.Row="2"  Grid.Column="0"
+                     mah:TextBoxHelper.Watermark="{DynamicResource adClient}" 
+                     />
+                    <TextBox Grid.Row="2"  Grid.Column="2"
+                     mah:TextBoxHelper.Watermark="{DynamicResource ad2Client}" 
+                     />
+
+                    <TextBox Grid.Row="3"  
+                     mah:TextBoxHelper.Watermark="{DynamicResource cpClient}" 
+                     />
+                    <ComboBox Grid.Row="3" Grid.Column="1"
+                              mah:TextBoxHelper.Watermark="{DynamicResource cityClient}"
+                              >
+                    </ComboBox>
+                    <TextBox Grid.Row="4"  
+                     mah:TextBoxHelper.Watermark="{DynamicResource countryForn}" 
+                     />
                 </Grid>
-            </Grid>
-            <Grid Grid.Row="1">
-                <DataGrid Name="dgFournisseur" Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DataGrid}">
-                    <DataGrid.Columns >
-                        <DataGridTextColumn Header="{DynamicResource codeForn}" MinWidth="100" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource rsForn}" MinWidth="130" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource ad1Forn}" MinWidth="130" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource ad2Forn}" MinWidth="100" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource cpForn}" MinWidth="90" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource cityForn}" MinWidth="100" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource countryForn}" MinWidth="90" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource mobileForn}" MinWidth="90" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource telForn}" MinWidth="150" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource faxForn}" MinWidth="150" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource emailForn}" MinWidth="150" Binding="{Binding}"/>
+            </ScrollViewer>
+        </GroupBox>
 
-                    </DataGrid.Columns>
-                </DataGrid>
 
-            </Grid>
-        </Grid>
-        <Grid Grid.Column="1">
+        <GroupBox Grid.Column="1" Grid.RowSpan="2" Header="{DynamicResource contactBx}">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBox Grid.Row="0"   
+                     mah:TextBoxHelper.Watermark="{DynamicResource telForn}" 
+                     />
+                    <TextBox Grid.Row="1"  
+                     mah:TextBoxHelper.Watermark="{DynamicResource mobileForn}" 
+                     />
+                    <TextBox Grid.Row="2"  
+                     mah:TextBoxHelper.Watermark="{DynamicResource faxForn}" 
+                     />
+                    <TextBox Grid.Row="3"  
+                     mah:TextBoxHelper.Watermark="{DynamicResource emailForn}" 
+                     />
+                    <TextBox Grid.Row="4"  
+                     mah:TextBoxHelper.Watermark="{DynamicResource URL}" 
+                     />
+                    <TextBox Grid.Row="5"  
+                     mah:TextBoxHelper.Watermark="{DynamicResource Activite}" 
+                     
+                             />
+                </Grid>
+            </ScrollViewer>
+        </GroupBox>
+       
+        <StackPanel Margin="5"  Grid.Row="3" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft">
+            <Button Style="{DynamicResource MahApps.Styles.Button.Square}" 
+                    Content="Annuler"
+                    Padding="20,0"
+                    FontSize="14"
+                    Margin="10,0,0,0"
+                    />
+            <Button Style="{DynamicResource MahApps.Styles.Button.Square.Highlight}" 
+                    Content="Save"
+                    Padding="20,0"
+                    FontSize="14"
+                    Margin="10,0,0,0"
+                    />
+        </StackPanel>
 
-            <StackPanel Margin="20,0,20,70" VerticalAlignment="Center">
-
-                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnCreateStyle}" 
-                        Content="{iconPacks:Ionicons Kind=AddCircleiOS,Width=32,Height=32}" 
-                        Name="btnCreate"
-                        MouseEnter="TooltipHandller"
-                        MouseLeave="TooltipCloseHandller"
-                        />
-
-                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnUpdateStyle}" 
-                        Content="{iconPacks:FontAwesome Kind=PenSolid,Width=32,Height=32}" 
-                        Name="btnUpdate"
-                        MouseEnter="TooltipHandller"
-                        MouseLeave="TooltipCloseHandller"
-                        />
-
-                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnDeleteStyle}" 
-                        Content="{iconPacks:Material Kind=Delete,Width=32,Height=32}" 
-                        Name="btnDelete" 
-                        MouseEnter="TooltipHandller"
-                        MouseLeave="TooltipCloseHandller"
-                        />
-
-                <!--<Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnUpdateStyle}" 
-                        Content="{iconPacks:Material Kind=FeatureSearch,Width=32,Height=32}" 
-                        Name="btnExamineProdut"
-                        MouseEnter="TooltipHandller"
-                        MouseLeave="TooltipCloseHandller"
-                        />
-
-                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnDeleteStyle}" 
-                        Content="{iconPacks:Material Kind=Delete,Width=32,Height=32}" 
-                        Name="btnDelete" 
-                        MouseEnter="TooltipHandller"
-                        MouseLeave="TooltipCloseHandller"
-                        />
-
-                <Button Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.btnCommandStyle}" 
-                        Content="{iconPacks:Material Kind=BasketPlus,Width=32,Height=32}" 
-                        Name="btnCommand"
-                        MouseEnter="TooltipHandller"
-                        MouseLeave="TooltipCloseHandller"
-                        />-->
-
-            </StackPanel>
-        </Grid>
 
         <Popup x:Name="AltTooltip"
             AllowsTransparency="True"

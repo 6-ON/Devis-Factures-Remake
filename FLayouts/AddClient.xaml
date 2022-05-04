@@ -196,13 +196,6 @@
         </StackPanel>
 
 
-
-
-
-
-
-
-
         <Popup x:Name="AltTooltip"
             AllowsTransparency="True"
             HorizontalOffset="-20"      

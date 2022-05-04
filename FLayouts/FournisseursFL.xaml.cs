@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,11 +28,6 @@ namespace Devis_Factures_Remake.FLayouts
             strings.Source = new Uri(@"resources\dictionaries\strings.xaml", UriKind.Relative);
             InitializeComponent();
             //just for test scrolling
-            List<int> nums = new List<int>();
-            for (int i = 0; i < 100; ++i)
-                nums.Add(i);
-
-            dgFournisseur.ItemsSource = nums;
         }
         public void TooltipHandller(object sender, MouseEventArgs e)
         {
