@@ -94,8 +94,8 @@
     <!--Founisseurs DG Collumns-->
     <s:String x:Key="codeForn">Code</s:String>
     <s:String x:Key="rsForn">Raison Sociale</s:String>
-    <s:String x:Key="ad1Forn">Adress 1</s:String>
-    <s:String x:Key="ad2Forn">Adress 2</s:String>
+    <s:String x:Key="ad1Forn">Adresse 1</s:String>
+    <s:String x:Key="ad2Forn">Adresse 2</s:String>
     <s:String x:Key="cpForn">Code Postal</s:String>
     <s:String x:Key="cityForn">Ville</s:String>
     <s:String x:Key="countryForn">Pays</s:String>
