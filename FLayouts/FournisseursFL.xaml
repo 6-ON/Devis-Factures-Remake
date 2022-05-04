@@ -92,6 +92,10 @@
                     <TextBox Grid.Row="4"  
                      mah:TextBoxHelper.Watermark="{DynamicResource countryForn}" 
                      />
+                    <TextBox Grid.Row="4" Grid.Column="1"  
+                     mah:TextBoxHelper.Watermark="{DynamicResource Activite}" 
+                     
+                             />
                 </Grid>
             </ScrollViewer>
         </GroupBox>
@@ -101,7 +105,6 @@
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -123,10 +126,7 @@
                     <TextBox Grid.Row="4"  
                      mah:TextBoxHelper.Watermark="{DynamicResource URL}" 
                      />
-                    <TextBox Grid.Row="5"  
-                     mah:TextBoxHelper.Watermark="{DynamicResource Activite}" 
-                     
-                             />
+
                 </Grid>
             </ScrollViewer>
         </GroupBox>

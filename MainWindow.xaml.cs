@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
@@ -22,6 +25,12 @@ namespace Devis_Factures_Remake
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        //[DllImport("user32.dll")]
+        //internal static extern IntPtr SetForegroundWindow(IntPtr hWnd);
+
+        //[DllImport("user32.dll")]
+        //internal static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
         ResourceDictionary strings = new ResourceDictionary();
 
         public MainWindow()
@@ -46,6 +55,18 @@ namespace Devis_Factures_Remake
             AltTooltip.Placement = PlacementMode.Bottom;
             AltTooltip.IsOpen = true;
             Context.PopupText.Text = message.ToString();
+        }
+
+        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        {
+            Process[] proc = Process.GetProcessesByName("calculator");
+
+
+            if (proc.Length != 0)
+            {
+                proc[0].Kill();
+            }
+            Process.Start("calc");
         }
     }
 }

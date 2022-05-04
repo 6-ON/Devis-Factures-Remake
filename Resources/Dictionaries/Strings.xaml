@@ -128,7 +128,41 @@
     <s:String x:Key="VenteHT">Vente  HT</s:String>
     <s:String x:Key="VenteHTinPer">Marge HT en %</s:String>
     <s:String x:Key="Unite">Unite</s:String>
+    
+    <!--Devislbls-->
+    
+    <s:String x:Key="infoDevisgrbx">Information devis</s:String>
+    <s:String x:Key="exerLbl">Exercice N</s:String>
+    <s:String x:Key="etatLbl">Etat</s:String>
+    <s:String x:Key="dtCreationLbl">Date Création</s:String>
+    <s:String x:Key="dtfermeteurLbl">Date Fermeteur</s:String>
+    <s:String x:Key="dtValidateLbl">Date Validité</s:String>
+    <s:String x:Key="printLbl">Imprimé</s:String>
+    <s:String x:Key="sendLbl">Envoi</s:String>
+    <s:String x:Key="acceptLbl">Accept</s:String>
+    <s:String x:Key="paimentParDftLbl">Paiment par défaut</s:String>
 
+    <s:String x:Key="tarifgrbx">Tarif</s:String>
+    <s:String x:Key="TarifDocLbl">Tarif du doc</s:String>
+    <s:String x:Key="totalHTLbl">Total HT</s:String>
+    <s:String x:Key="RemiseGlobaleLbl">Remise Globale</s:String>
+    <s:String x:Key="totalHTapresRemiseLbl">Total HT aprés remise</s:String>
+    <s:String x:Key="AutoLiquidationLbl">Auto liquidation</s:String>
+    <s:String x:Key="TotalHT">Total HT</s:String>
+    <s:String x:Key="AcompteLbl">Acomplet</s:String>
+    <s:String x:Key="netAPayer">Net à Payer</s:String>
+    <s:String x:Key="AutresAchats">Autres Achats</s:String>
+    <s:String x:Key="margeLbl">Marge</s:String>
+    
+    
+    <s:String x:Key="infoClient">Informations Client</s:String>
+    <s:String x:Key="adresseChantier">Adresse Chantier</s:String>
+    <s:String x:Key="observationLbl">Observations</s:String>
+    <s:String x:Key="conditionPaiementLbl">Condition de paiement</s:String>
+    <s:String x:Key="AnnotationLbl">Annotation</s:String>
+    <s:String x:Key="MdifierLinesDocLbl">Modifier les ligne du document</s:String>
+    <s:String x:Key="SendByEmailLbl">Envoyer par email</s:String>
+    <s:String x:Key="pdf">Pdf</s:String>
 
 
 
