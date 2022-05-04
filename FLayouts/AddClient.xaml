@@ -10,16 +10,31 @@
              mc:Ignorable="d" 
              d:DesignHeight="509" d:DesignWidth="1118">
     <UserControl.Resources>
-        <Style TargetType="TextBox" BasedOn="{StaticResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.NormalTextBox}"/>
-        <Style TargetType="ComboBox" BasedOn="{StaticResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.FileterCB}"/>
-        <Style x:Key="btnSave" TargetType="Button" BasedOn="{StaticResource MahApps.Styles.Button.Flat}">
+        <Style TargetType="TextBox" BasedOn="{StaticResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.NormalTextBox}">
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            
+        </Style>
+        <Style TargetType="ComboBox" BasedOn="{StaticResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.FileterCB}">
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Margin" Value="5"/>
+            
+
+        </Style>
+            <Style x:Key="btnSave" TargetType="Button" BasedOn="{StaticResource MahApps.Styles.Button.Flat}">
             <Style.Triggers>
                 <Trigger Property="IsPressed" Value="True">
                     <Setter Property="Background" Value="{DynamicResource MahApps.Brushes.Accent}"></Setter>
                 </Trigger>
             </Style.Triggers>
         </Style>
-        <Style TargetType="DatePicker" BasedOn="{StaticResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DatePickerStyle}"/>
+        <Style TargetType="DatePicker" BasedOn="{StaticResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DatePickerStyle}">
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Margin" Value="5"/>
+
+        </Style>
     </UserControl.Resources>
     <Grid Background="White" Margin="10,10,10,5">
         <Grid.ColumnDefinitions>
@@ -43,52 +58,63 @@
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
+                       
                     </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
                     <TextBox Grid.Row="0"  
-                     mah:TextBoxHelper.Watermark="{DynamicResource codeForn}" 
-                     />
-                    <ComboBox Grid.Row="1" 
-                              Margin="5"
-                              mah:TextBoxHelper.Watermark="{DynamicResource Civilite}"
+                         mah:TextBoxHelper.Watermark="{DynamicResource codeForn}" 
+                         />
+                    <ComboBox Grid.Row="0" Grid.Column="1" 
+                                mah:TextBoxHelper.Watermark="{DynamicResource Civilite}"
                               
-                              >
+                                >
                     </ComboBox>
-                    <TextBox Grid.Row="2"  
+
+                    <TextBox Grid.Row="1"  Grid.ColumnSpan="2"
                      mah:TextBoxHelper.Watermark="{DynamicResource rsClient}" 
                      />
-                    <TextBox Grid.Row="3"  
+                    <TextBox Grid.Row="2"  Grid.Column="1" 
                      mah:TextBoxHelper.Watermark="{DynamicResource nomClient}" 
                      />
-                    <TextBox Grid.Row="4"  
+                    <TextBox Grid.Row="2"  
                      mah:TextBoxHelper.Watermark="{DynamicResource pnomClient}" 
                      />
-                    <TextBox Grid.Row="5"  
+                    <TextBox Grid.Row="3"  Grid.Column="0"
                      mah:TextBoxHelper.Watermark="{DynamicResource adClient}" 
                      />
-                    <TextBox Grid.Row="6"  
+                    <TextBox Grid.Row="3"  Grid.Column="2"
                      mah:TextBoxHelper.Watermark="{DynamicResource ad2Client}" 
                      />
-                    <TextBox Grid.Row="7"  
-                     mah:TextBoxHelper.Watermark="{DynamicResource ad3Client}" 
-                     />
-                    <TextBox Grid.Row="8"  
+                    
+                    <TextBox Grid.Row="5"  
                      mah:TextBoxHelper.Watermark="{DynamicResource cpClient}" 
                      />
-                    <ComboBox Grid.Row="9" 
-                              Margin="5"
+                    <ComboBox Grid.Row="4" Grid.Column="1"
                               mah:TextBoxHelper.Watermark="{DynamicResource cityClient}"
                               >
                     </ComboBox>
-                    <TextBox Grid.Row="10"  
+                    <TextBox Grid.Row="4"  
                      mah:TextBoxHelper.Watermark="{DynamicResource countryForn}" 
                      />
-                    <DatePicker Grid.Row="11" />
+                    <DatePicker Grid.Row="5" Grid.Column="1" mah:TextBoxHelper.Watermark="{DynamicResource DN}"/>
+                    <ComboBox Grid.Row="6" 
+                              mah:TextBoxHelper.Watermark="{DynamicResource Genre}"
+                              >
+                            <ComboBoxItem Content="Homme"/>
+                            <ComboBoxItem Content="Femme"/>
+                            <ComboBoxItem Content="Enfant"/>
+                            <ComboBoxItem Content="Couple"/>
+                    </ComboBox>
+                    <ComboBox Grid.Row="6" Grid.Column="1"
+                              mah:TextBoxHelper.Watermark="{DynamicResource stateClient}"
+                              >
+                        <ComboBoxItem Content="Client"/>
+                        <ComboBoxItem Content="Prospect"/>
+
+                    </ComboBox>
                 </Grid>
             </ScrollViewer>
         </GroupBox>

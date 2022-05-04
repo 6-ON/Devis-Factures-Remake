@@ -127,6 +127,7 @@
     <s:String x:Key="MargeHT">Marge HT</s:String>
     <s:String x:Key="VenteHT">Vente  HT</s:String>
     <s:String x:Key="VenteHTinPer">Marge HT en %</s:String>
+    <s:String x:Key="Unite">Unite</s:String>
 
 
 
