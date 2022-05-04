@@ -54,7 +54,7 @@ namespace Devis_Factures_Remake.Tabs
             Context.PopupText.Text = message.ToString();
         }
 
-        private void btnCreate_Click(object sender, RoutedEventArgs e)
+        private void btnCreateFournisseuer_Click(object sender, RoutedEventArgs e)
         {
             Window parentWindow = Window.GetWindow(this);
             object obj = parentWindow.FindName("testfl");

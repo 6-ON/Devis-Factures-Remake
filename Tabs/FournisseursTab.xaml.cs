@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,20 +13,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
-namespace Devis_Factures_Remake.FLayouts
+using MahApps.Metro.Controls;
+namespace Devis_Factures_Remake.Tabs
 {
     /// <summary>
-    /// Interaction logic for FournisseursFL.xaml
+    /// Interaction logic for FournisseursTab.xaml
     /// </summary>
-    public partial class FournisseursFL : UserControl
+    public partial class FournisseursTab : UserControl
     {
         ResourceDictionary strings = new ResourceDictionary();
-        public FournisseursFL()
+        public FournisseursTab()
         {
             strings.Source = new Uri(@"resources\dictionaries\strings.xaml", UriKind.Relative);
             InitializeComponent();
             //just for test scrolling
+            List<int> nums = new List<int>();
+            for (int i = 0; i < 100; ++i)
+                nums.Add(i);
+
+            dgStock.ItemsSource = nums;
         }
         public void TooltipHandller(object sender, MouseEventArgs e)
         {
@@ -46,6 +50,25 @@ namespace Devis_Factures_Remake.FLayouts
             AltTooltip.Placement = PlacementMode.Bottom;
             AltTooltip.IsOpen = true;
             Context.PopupText.Text = message.ToString();
+        }
+
+        private void btnCreate_Click(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            object obj = parentWindow.FindName("testfl");
+            Flyout flyout = (Flyout)obj;
+            flyout.Content = new FLayouts.StockOverview();
+            flyout.IsOpen = !flyout.IsOpen;
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            object obj = parentWindow.FindName("testfl");
+            Flyout flyout = (Flyout)obj;
+            flyout.Content = new FLayouts.StockOverview();
+            flyout.Header = "Stock";
+            flyout.IsOpen = !flyout.IsOpen;
         }
     }
 }

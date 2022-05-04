@@ -29,7 +29,7 @@
     </mah:MetroWindow.Flyouts>
     <mah:MetroWindow.RightWindowCommands>
         <mah:WindowCommands>
-            <Button Content="{iconPacks:MaterialDesign Kind=Settings}"  Name="btnSettings" MouseEnter="TooltipHandller" MouseLeave="TooltipCloseHandller"/>
+            <Button Content="{iconPacks:MaterialDesign Kind=Settings}"  Name="btnSettings" MouseEnter="TooltipHandller" MouseLeave="TooltipCloseHandller" Click="btnSettings_Click"/>
             <Button Content="{iconPacks:Material Kind=CalculatorVariant}" Name="btnCalc" MouseEnter="TooltipHandller" MouseLeave="TooltipCloseHandller"/>
             <Button Content="{iconPacks:Material Kind=ClipboardEdit}" Name="btnNotes" MouseEnter="TooltipHandller" MouseLeave="TooltipCloseHandller"/>
             <Button Content="{iconPacks:FontAwesome Kind=CalendarAltSolid}" Name="btnCalendar" MouseEnter="TooltipHandller" MouseLeave="TooltipCloseHandller"/>
@@ -79,6 +79,11 @@
             </TabItem>
             <TabItem Header="B.Livration">
                 <Tabs:BLivrationTab/>
+            </TabItem>
+
+            
+            <TabItem Header="B.Livration">
+                <Tabs:FournisseursTab/>
             </TabItem>
 
         </TabControl>
