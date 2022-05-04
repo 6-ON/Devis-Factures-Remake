@@ -12,12 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Devis_Factures_Remake.Tabs;
+using MahApps.Metro.Controls;
+
 namespace Devis_Factures_Remake
 {
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class Window1 : MetroWindow
     {
         public Window1()
         {

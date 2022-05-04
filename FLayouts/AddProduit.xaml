@@ -10,8 +10,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="509" d:DesignWidth="1118">
     <UserControl.Resources>
-        <Style TargetType="TextBox" BasedOn="{StaticResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.NormalTextBox}"/>
-        <Style TargetType="ComboBox" BasedOn="{StaticResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.FileterCB}"/>
+        <Style TargetType="TextBox" BasedOn="{StaticResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.NormalTextBox}">
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+
+        </Style>
+        <Style TargetType="ComboBox" BasedOn="{StaticResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.FileterCB}">
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Margin" Value="5"/>
+
+
+        </Style>
         <Style x:Key="btnSave" TargetType="Button" BasedOn="{StaticResource MahApps.Styles.Button.Flat}">
             <Style.Triggers>
                 <Trigger Property="IsPressed" Value="True">
@@ -19,7 +29,12 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        <Style TargetType="DatePicker" BasedOn="{StaticResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DatePickerStyle}"/>
+        <Style TargetType="DatePicker" BasedOn="{StaticResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DatePickerStyle}">
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Margin" Value="5"/>
+
+        </Style>
     </UserControl.Resources>
     <Grid Background="White" Margin="10,10,10,5">
         <Grid.ColumnDefinitions>
@@ -32,10 +47,6 @@
             <RowDefinition/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
-        <GroupBox Header="image" Grid.Column="1" Grid.RowSpan="3" Margin="5,0,0,0">
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
-            </ScrollViewer>
-        </GroupBox>
         <GroupBox  Grid.RowSpan="2" Header="Info">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <Grid>
@@ -54,7 +65,7 @@
                      />
                     <ComboBox Grid.Column="1"
                               Margin="5"
-                              mah:TextBoxHelper.Watermark="{DynamicResource un}"
+                              mah:TextBoxHelper.Watermark="{DynamicResource Unite}"
                               >
                         <ComboBoxItem Content="test"/>
                         <ComboBoxItem Content="test"/>
@@ -94,7 +105,7 @@
                      mah:TextBoxHelper.Watermark="{DynamicResource venteProdCol}" 
                      />
                     <TextBox  Grid.Row="1"
-                     mah:TextBoxHelper.Watermark="{DynamicResource infoPerBx}" 
+                     mah:TextBoxHelper.Watermark="{DynamicResource VenteHTinPer}" 
                      />
                     <ComboBox Grid.Row="1"  Grid.Column="1"
                               Margin="5"
@@ -105,20 +116,48 @@
                         <ComboBoxItem Content="test"/>
                         <ComboBoxItem Content="test"/>
                     </ComboBox>
-                    <TextBox  Grid.Row="2"
-                     mah:TextBoxHelper.Watermark="{DynamicResource infoPerBx}" 
+                    <TextBox  Grid.Row="2" IsReadOnly="True"
+                     mah:TextBoxHelper.Watermark="{DynamicResource tttcAvoir}" 
                      />
+                    <TextBlock VerticalAlignment="Center"
+                               Grid.Column="1" Grid.Row="2" 
+                               Text="{DynamicResource MargeHTlbl}"
+                               FontWeight="Medium"
+                               />
+                </Grid>
+            </ScrollViewer>
+        </GroupBox>
+        <GroupBox Header="image" Grid.Column="1" Grid.RowSpan="3" Margin="5,0,0,0">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="36"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                <Button Style="{DynamicResource MahApps.Styles.Button.Square.Highlight}" 
+                    Margin="5,0,0,0"
+                    BorderThickness="0"
+                    HorizontalAlignment="Left"
+                    Content="attacher"
+                    FontSize="14"
+                    Padding="20,0"
+                    />
+                    <Grid Grid.Row="1" Background="LightGray" Margin="5">
+                        <Image Name="imageProduct" ></Image>
+                    </Grid>
                 </Grid>
             </ScrollViewer>
         </GroupBox>
         <StackPanel Margin="5"  Grid.Row="3" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft">
-            <Button Style="{DynamicResource MahApps.Styles.Button.Square}" 
+            <Button Style="{DynamicResource MahApps.Styles.Button.Flat}" 
+                    FontWeight="Medium"
                     Content="Annuler"
                     Padding="20,0"
                     FontSize="14"
                     Margin="10,0,0,0"
                     />
             <Button Style="{DynamicResource MahApps.Styles.Button.Square.Highlight}" 
+                    BorderThickness="0"
                     Content="Save"
                     Padding="20,0"
                     FontSize="14"
