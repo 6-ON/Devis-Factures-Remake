@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MahApps.Metro.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,8 +12,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Devis_Factures_Remake.Tabs;
-using MahApps.Metro.Controls;
 
 namespace Devis_Factures_Remake
 {
@@ -25,5 +24,6 @@ namespace Devis_Factures_Remake
         {
             InitializeComponent();
         }
+
     }
 }
