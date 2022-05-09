@@ -125,6 +125,7 @@
     <!--Other lbls-->
     <s:String x:Key="Tarif">Tarif</s:String>
     <s:String x:Key="MargeHT">Marge HT</s:String>
+    <s:String x:Key="MargeHTlbl">Marge HT: </s:String>
     <s:String x:Key="VenteHT">Vente  HT</s:String>
     <s:String x:Key="VenteHTinPer">Marge HT en %</s:String>
     <s:String x:Key="Unite">Unite</s:String>

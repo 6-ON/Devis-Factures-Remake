@@ -37,7 +37,49 @@
         </mah:WindowCommands>
 
     </mah:MetroWindow.RightWindowCommands>
-    
+    <Window.Resources>
+        <ResourceDictionary>
+            <!--  This is the template for all menu items. In this sample we use the icon items.  -->
+            <DataTemplate x:Key="HamburgerMenuItem" DataType="{x:Type mah:HamburgerMenuGlyphItem}">
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type mah:HamburgerMenu}}, Path=CompactPaneLength}" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <ContentControl Grid.Column="0"
+                                    Content="{Binding Icon}"
+                                    Focusable="False"
+                                    IsTabStop="False" />
+                    <TextBlock Grid.Column="1"
+                               VerticalAlignment="Center"
+                               FontSize="16"
+                               Text="{Binding Label}" />
+                </Grid>
+            </DataTemplate>
+
+            <!--  This is the template for all option menu items.  -->
+            <DataTemplate x:Key="HamburgerOptionsMenuItem" DataType="{x:Type mah:HamburgerMenuItem}">
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type mah:HamburgerMenu}}, Path=CompactPaneLength}" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <ContentControl Grid.Column="0"
+                                    Content="{Binding Icon}"
+                                    Focusable="False"
+                                    IsTabStop="False" />
+                    <TextBlock Grid.Column="1"
+                               VerticalAlignment="Center"
+                               FontSize="16"
+                               Text="{Binding Label}" />
+                </Grid>
+            </DataTemplate>
+
+
+
+        </ResourceDictionary>
+    </Window.Resources>
+
 
     <Grid>
         <Popup x:Name="AltTooltip"
@@ -47,48 +89,180 @@
                 <res:AltToolTip x:Name="Context"/>
             </Grid>
         </Popup>
-        <TabControl Style="{DynamicResource MahApps.Styles.TabControl.AnimatedSingleRow }">
-            <TabItem Header="Table De bord" >
-                <Tabs:Dashboard />
-            </TabItem>
-            <TabItem Header="Devis">
-                <Tabs:DevisTab/>
-            </TabItem>
-            <TabItem Header="Factures">
-                <Tabs:FactureTab/>
-            </TabItem>
-            <TabItem Header="Avoirs">
-                <Tabs:AvoirTab/>
-            </TabItem>
-            <TabItem Header="Clients">
-                <Tabs:ClientTab/>
-            </TabItem>
-            <TabItem Header="Produits">
-                <Tabs:ProduitsTab/>
-            </TabItem>
-            <TabItem Header="Stock">
-                <TabControl Style="{DynamicResource MahApps.Styles.TabControl.AnimatedSingleRow}">
-                    <TabItem Header="Stock" Style="{DynamicResource stocktabsstyle}">
-                        <Tabs:StockTab/>
-                    </TabItem>
-                    <TabItem Header="Commandes de Fournisseures" Style="{DynamicResource stocktabsstyle}">
-                        <Tabs:CommandesFournisseursTab/>
-                    </TabItem>
+        <mah:HamburgerMenu x:Name="HamburgerMenuControl"
+                       DisplayMode="CompactOverlay"
+                       HamburgerWidth="48"
+                       ItemInvoked="HamburgerMenuControl_OnItemInvoked"
+                       ItemTemplate="{StaticResource HamburgerMenuItem}"
+                       OptionsItemTemplate="{StaticResource HamburgerOptionsMenuItem}"
+                       SelectedIndex="1"
+                       Style="{StaticResource MahApps.Styles.HamburgerMenu.CreatorsUpdate}"
+                       VerticalScrollBarOnLeftSide="False">
+            <!--  Items  -->
+            <mah:HamburgerMenu.ItemsSource>
+                <mah:HamburgerMenuItemCollection>
+                    <mah:HamburgerMenuIconItem Label="Tableau De Bord" >
+                        <mah:HamburgerMenuIconItem.Icon>
+                            <iconPacks:PackIconFontAwesome Kind="ColumnsSolid" 
+                                                            Width="22"
+                                                            Height="22"
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center"/>
+                        </mah:HamburgerMenuIconItem.Icon>
+                        <mah:HamburgerMenuIconItem.Tag>
+                            <Tabs:Dashboard/>
+                        </mah:HamburgerMenuIconItem.Tag>
+                    </mah:HamburgerMenuIconItem>
+                
+                    <mah:HamburgerMenuIconItem Label="Devis" >
+                        <mah:HamburgerMenuIconItem.Icon>
+                            <iconPacks:PackIconFontAwesome Kind="FileInvoiceDollarSolid" 
+                                                            Width="22"
+                                                            Height="22"
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center"/>
+                        </mah:HamburgerMenuIconItem.Icon>
+                        <mah:HamburgerMenuIconItem.Tag>
+                            <Tabs:DevisTab/>
+                        </mah:HamburgerMenuIconItem.Tag>
+                    </mah:HamburgerMenuIconItem>
+                    
+                    <mah:HamburgerMenuIconItem Label="Facture" >
+                        <mah:HamburgerMenuIconItem.Icon>
+                            <iconPacks:PackIconRemixIcon Kind="FilePaper2Fill" 
+                                                               Width="22"
+                                                            Height="22"
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center"/>
+                        </mah:HamburgerMenuIconItem.Icon>
+                        <mah:HamburgerMenuIconItem.Tag>
+                            <Tabs:FactureTab/>
+                        </mah:HamburgerMenuIconItem.Tag>
+                    </mah:HamburgerMenuIconItem>
+                    
+                    <mah:HamburgerMenuIconItem Label="Clients" >
+                        <mah:HamburgerMenuIconItem.Icon>
+                            <iconPacks:PackIconMaterial Kind="AccountTie" 
+                                                             Width="22"
+                                                            Height="22"
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center"/>
+                        </mah:HamburgerMenuIconItem.Icon>
+                        <mah:HamburgerMenuIconItem.Tag>
+                            <Tabs:ClientTab/>
+                        </mah:HamburgerMenuIconItem.Tag>
+                    </mah:HamburgerMenuIconItem>
+                    <mah:HamburgerMenuIconItem Label="Produits" >
+                        
+                        <mah:HamburgerMenuIconItem.Icon>
+                            <iconPacks:PackIconFontAwesome Kind="BoxSolid" 
+                                                             Width="22"
+                                                            Height="22"
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center"/>
+                        </mah:HamburgerMenuIconItem.Icon>
+                        <mah:HamburgerMenuIconItem.Tag>
+                            <Tabs:ProduitsTab/>
+                        </mah:HamburgerMenuIconItem.Tag>
+                    </mah:HamburgerMenuIconItem>
+                    <mah:HamburgerMenuIconItem Label="Stock et Commandes" >
+                        
+                        <mah:HamburgerMenuIconItem.Icon>
+                            <iconPacks:PackIconIonicons Kind="AlbumsiOS"
+                                                             Width="22"
+                                                            Height="22"
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center"/>
+                        </mah:HamburgerMenuIconItem.Icon>
+                        <mah:HamburgerMenuIconItem.Tag>
+                            <TabControl Style="{DynamicResource MahApps.Styles.TabControl.AnimatedSingleRow}">
+                                <TabItem Header="Stock" >
+                                    <Tabs:StockTab/>
+                                </TabItem>
+                                <TabItem Header="Commandes de Fournisseures" >
+                                    <Tabs:CommandesFournisseursTab/>
+                                </TabItem>
+                            </TabControl>
+                        </mah:HamburgerMenuIconItem.Tag>
+                    </mah:HamburgerMenuIconItem>
+                    <mah:HamburgerMenuIconItem Label="Fournisseur" >
+                        
+                        <mah:HamburgerMenuIconItem.Icon>
+                            <iconPacks:PackIconVaadinIcons Kind="Workplace" 
+                                                             Width="22"
+                                                            Height="22"
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center"/>
+                        </mah:HamburgerMenuIconItem.Icon>
+                        <mah:HamburgerMenuIconItem.Tag>
+                            <Tabs:FournisseursTab/>
+                        </mah:HamburgerMenuIconItem.Tag>
+                    </mah:HamburgerMenuIconItem>
+                    
+                    <mah:HamburgerMenuIconItem Label="Bon Livraison" >
+                        
+                        <mah:HamburgerMenuIconItem.Icon>
+                            <iconPacks:PackIconMaterial Kind="HandCoin" 
+                                                             Width="22"
+                                                            Height="22"
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center"/>
+                        </mah:HamburgerMenuIconItem.Icon>
+                        <mah:HamburgerMenuIconItem.Tag>
+                            <Tabs:BLivrationTab/>
+                        </mah:HamburgerMenuIconItem.Tag>
+                    </mah:HamburgerMenuIconItem>
+                    
+                </mah:HamburgerMenuItemCollection>
+            </mah:HamburgerMenu.ItemsSource>
 
-                </TabControl>
-            </TabItem>
-            <TabItem Header="B.Livration">
-                <Tabs:BLivrationTab/>
-            </TabItem>
+            <!--  Options  -->
+            <mah:HamburgerMenu.OptionsItemsSource>
+                <mah:HamburgerMenuItemCollection>
+                    <mah:HamburgerMenuIconItem Label="Settings">
+                        <mah:HamburgerMenuIconItem.Icon>
+                            <iconPacks:PackIconMaterial Width="22"
+                                                            Height="22"
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center"
+                                                            Kind="Cog" />
+                        </mah:HamburgerMenuIconItem.Icon>
+                        <!--needs setttings page-->
+                    </mah:HamburgerMenuIconItem>
+                </mah:HamburgerMenuItemCollection>
+            </mah:HamburgerMenu.OptionsItemsSource>
 
-            
-            <TabItem Header="B.Livration">
-                <Tabs:FournisseursTab/>
-            </TabItem>
+            <!--  Content  -->
+            <mah:HamburgerMenu.ContentTemplate>
+                <DataTemplate>
+                    <Grid x:Name="ContentGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0">
 
-        </TabControl>
+                            <TextBlock x:Name="Header"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontSize="24"
+                                           Text="{Binding Label}" />
+                        </Border>
+                        <mah:TransitioningContentControl Grid.Row="1"
+                                                             Content="{Binding Tag}"
+                                                             RestartTransitionOnContentChange="True"
+                                                             Transition="Up">
+                            <mah:TransitioningContentControl.ContentTemplate>
+                                <DataTemplate>
+                                    <ContentControl Content="{Binding Mode=OneWay}" />
+                                </DataTemplate>
+                            </mah:TransitioningContentControl.ContentTemplate>
+                        </mah:TransitioningContentControl>
+                    </Grid>
+                </DataTemplate>
+            </mah:HamburgerMenu.ContentTemplate>
+        </mah:HamburgerMenu>
 
-        
         <!--styles-->
 
         
@@ -108,7 +282,7 @@
                 </Setter>
             </Style>
             <!--stock tabs styles-->
-            <Style x:Key="stocktabsstyle" TargetType="TabItem" BasedOn="{StaticResource MahApps.Styles.TabItem}">
+            <!--<Style x:Key="stocktabsstyle" TargetType="TabItem" BasedOn="{StaticResource MahApps.Styles.TabItem}">
                 <Setter Property="HeaderTemplate">
                     <Setter.Value>
                         <DataTemplate>
@@ -118,7 +292,9 @@
                         </DataTemplate>
                     </Setter.Value>
                 </Setter>
-            </Style>
+            </Style>-->
+        
+        
         </Grid.Resources>
 
     </Grid>

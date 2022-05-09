@@ -1,13 +1,99 @@
-﻿<Window x:Class="Devis_Factures_Remake.Window1"
+﻿<mah:MetroWindow x:Class="Devis_Factures_Remake.Window1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Devis_Factures_Remake"
-        mc:Ignorable="d"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:Tabs="clr-namespace:Devis_Factures_Remake.Tabs"
+        xmlns:res="clr-namespace:Devis_Factures_Remake.Resources.Extras"
+    mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
-    <Grid>
-        <Button Content="Button"  Width="64" Height="64"  ToolTip="jehdjerhfoher" ToolTipService.ShowDuration="4000" />
 
-    </Grid>
-</Window>
+
+    <!--<Window.Resources>
+        <ResourceDictionary>
+            --><!--  This is the template for all menu items. In this sample we use the icon items.  --><!--
+            <DataTemplate x:Key="HamburgerMenuItem" DataType="{x:Type mah:HamburgerMenuGlyphItem}">
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type mah:HamburgerMenu}}, Path=CompactPaneLength}" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <ContentControl Grid.Column="0"
+                                    Content="{Binding Icon}"
+                                    Focusable="False"
+                                    IsTabStop="False" />
+                    <TextBlock Grid.Column="1"
+                               VerticalAlignment="Center"
+                               FontSize="16"
+                               Text="{Binding Label}" />
+                </Grid>
+            </DataTemplate>
+
+            --><!--  This is the template for all option menu items.  --><!--
+            <DataTemplate x:Key="HamburgerOptionsMenuItem" DataType="{x:Type mah:HamburgerMenuItem}">
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type mah:HamburgerMenu}}, Path=CompactPaneLength}" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <ContentControl Grid.Column="0"
+                                    Content="{Binding Icon}"
+                                    Focusable="False"
+                                    IsTabStop="False" />
+                    <TextBlock Grid.Column="1"
+                               VerticalAlignment="Center"
+                               FontSize="16"
+                               Text="{Binding Label}" />
+                </Grid>
+            </DataTemplate>
+
+
+
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <TabControl Style="{DynamicResource MahApps.Styles.TabControl.AnimatedSingleRow }">
+        <TabItem Header="Tableu De bord" >
+            <Tabs:Dashboard />
+        </TabItem>
+        <TabItem Header="Devis">
+            <Tabs:DevisTab/>
+        </TabItem>
+        <TabItem Header="Factures">
+            <Tabs:FactureTab/>
+        </TabItem>
+        <TabItem Header="Avoirs">
+            <Tabs:AvoirTab/>
+        </TabItem>
+        <TabItem Header="Clients">
+            <Tabs:ClientTab/>
+        </TabItem>
+        <TabItem Header="Produits">
+            <Tabs:ProduitsTab/>
+        </TabItem>
+        <TabItem Header="Stock">
+            <TabControl Style="{DynamicResource MahApps.Styles.TabControl.AnimatedSingleRow}">
+                <TabItem Header="Stock" Style="{DynamicResource stocktabsstyle}">
+                    <Tabs:StockTab/>
+                </TabItem>
+                <TabItem Header="Commandes de Fournisseures" Style="{DynamicResource stocktabsstyle}">
+                    <Tabs:CommandesFournisseursTab/>
+                </TabItem>
+
+            </TabControl>
+        </TabItem>
+        <TabItem Header="B.Livration">
+            <Tabs:BLivrationTab/>
+        </TabItem>
+
+
+        <TabItem Header="B.Livration">
+            <Tabs:FournisseursTab/>
+        </TabItem>
+
+    </TabControl>-->
+
+</mah:MetroWindow>
