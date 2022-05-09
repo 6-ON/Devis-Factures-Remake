@@ -111,8 +111,22 @@
         </Style.Triggers>
     </Style>
 
-    <!--Search box Style-->
+    <!--DatePicker Style-->
     <Style x:Key="Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DatePickerStyle" TargetType="DatePicker"  BasedOn="{StaticResource MahApps.Styles.DatePicker}">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Height" Value="Auto"/>
+        <Setter Property="MinHeight" Value="30"/>
+        <Setter Property="Width" Value="400"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="mah:ControlsHelper.CornerRadius" Value="5"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="mah:ControlsHelper.FocusBorderBrush" Value="{StaticResource MahApps.Brushes.Accent}"/>
+
+    </Style>
+    <!--DateTimePickerStyle Style-->
+    <Style x:Key="Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DateTimePickerStyle" TargetType="mah:DateTimePicker"  >
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Height" Value="Auto"/>
         <Setter Property="MinHeight" Value="30"/>
