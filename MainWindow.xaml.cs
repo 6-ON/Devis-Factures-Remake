@@ -73,12 +73,11 @@ namespace Devis_Factures_Remake
         private void HamburgerMenuControl_OnItemInvoked(object sender, HamburgerMenuItemInvokedEventArgs e)
         {
             this.HamburgerMenuControl.Content = e.InvokedItem;
-
-            if (!e.IsItemOptions && this.HamburgerMenuControl.IsPaneOpen)
-            {
-                // You can close the menu if an item was selected
-                this.HamburgerMenuControl.IsPaneOpen = false;
-            }
+            //if (!e.IsItemOptions && this.HamburgerMenuControl.IsPaneOpen)
+            //{
+            //    // You can close the menu if an item was selected
+            //    this.HamburgerMenuControl.IsPaneOpen = false;
+            //}
         }
     }
 }

@@ -15,6 +15,7 @@
                  mc:Ignorable="d"
                  ShowTitleBar="True"
                  Title="Devis Factures"
+                 WindowTitleBrush="{StaticResource MahApps.Brushes.AccentBase }"
                  
                  >
     <mah:MetroWindow.Flyouts>
@@ -40,7 +41,7 @@
     <Window.Resources>
         <ResourceDictionary>
             <!--  This is the template for all menu items. In this sample we use the icon items.  -->
-            <DataTemplate x:Key="HamburgerMenuItem" DataType="{x:Type mah:HamburgerMenuGlyphItem}">
+            <DataTemplate x:Key="HamburgerMenuItem" DataType="{x:Type mah:HamburgerMenuIconItem}">
                 <Grid Height="48">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type mah:HamburgerMenu}}, Path=CompactPaneLength}" />
@@ -49,14 +50,14 @@
                     <ContentControl Grid.Column="0"
                                     Content="{Binding Icon}"
                                     Focusable="False"
-                                    IsTabStop="False" />
+                                    IsTabStop="False" 
+                                    />
                     <TextBlock Grid.Column="1"
                                VerticalAlignment="Center"
                                FontSize="16"
                                Text="{Binding Label}" />
                 </Grid>
             </DataTemplate>
-
             <!--  This is the template for all option menu items.  -->
             <DataTemplate x:Key="HamburgerOptionsMenuItem" DataType="{x:Type mah:HamburgerMenuItem}">
                 <Grid Height="48">
@@ -90,22 +91,22 @@
             </Grid>
         </Popup>
         <mah:HamburgerMenu x:Name="HamburgerMenuControl"
-                       DisplayMode="CompactOverlay"
-                       HamburgerWidth="48"
-                       ItemInvoked="HamburgerMenuControl_OnItemInvoked"
-                       ItemTemplate="{StaticResource HamburgerMenuItem}"
-                       OptionsItemTemplate="{StaticResource HamburgerOptionsMenuItem}"
-                       SelectedIndex="1"
-                       Style="{StaticResource MahApps.Styles.HamburgerMenu.CreatorsUpdate}"
-                       VerticalScrollBarOnLeftSide="False">
+                           DisplayMode="CompactOverlay"
+                           HamburgerWidth="48"
+                           ItemInvoked="HamburgerMenuControl_OnItemInvoked"
+                           ItemTemplate="{StaticResource HamburgerMenuItem}"
+                           OptionsItemTemplate="{StaticResource HamburgerOptionsMenuItem}"
+                           SelectedIndex="0"
+                           Style="{StaticResource MahApps.Styles.HamburgerMenu.CreatorsUpdate}"
+                           VerticalScrollBarOnLeftSide="False">
             <!--  Items  -->
             <mah:HamburgerMenu.ItemsSource>
                 <mah:HamburgerMenuItemCollection>
                     <mah:HamburgerMenuIconItem Label="Tableau De Bord" >
                         <mah:HamburgerMenuIconItem.Icon>
                             <iconPacks:PackIconFontAwesome Kind="ColumnsSolid" 
-                                                            Width="22"
-                                                            Height="22"
+                                                            Width="16"
+                                                            Height="16"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                         </mah:HamburgerMenuIconItem.Icon>
@@ -117,8 +118,8 @@
                     <mah:HamburgerMenuIconItem Label="Devis" >
                         <mah:HamburgerMenuIconItem.Icon>
                             <iconPacks:PackIconFontAwesome Kind="FileInvoiceDollarSolid" 
-                                                            Width="22"
-                                                            Height="22"
+                                                            Width="16"
+                                                            Height="16"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                         </mah:HamburgerMenuIconItem.Icon>
@@ -130,8 +131,8 @@
                     <mah:HamburgerMenuIconItem Label="Facture" >
                         <mah:HamburgerMenuIconItem.Icon>
                             <iconPacks:PackIconRemixIcon Kind="FilePaper2Fill" 
-                                                               Width="22"
-                                                            Height="22"
+                                                               Width="16"
+                                                            Height="16"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                         </mah:HamburgerMenuIconItem.Icon>
@@ -143,8 +144,8 @@
                     <mah:HamburgerMenuIconItem Label="Clients" >
                         <mah:HamburgerMenuIconItem.Icon>
                             <iconPacks:PackIconMaterial Kind="AccountTie" 
-                                                             Width="22"
-                                                            Height="22"
+                                                             Width="16"
+                                                            Height="16"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                         </mah:HamburgerMenuIconItem.Icon>
@@ -156,8 +157,8 @@
                         
                         <mah:HamburgerMenuIconItem.Icon>
                             <iconPacks:PackIconFontAwesome Kind="BoxSolid" 
-                                                             Width="22"
-                                                            Height="22"
+                                                             Width="16"
+                                                            Height="16"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                         </mah:HamburgerMenuIconItem.Icon>
@@ -169,8 +170,8 @@
                         
                         <mah:HamburgerMenuIconItem.Icon>
                             <iconPacks:PackIconIonicons Kind="AlbumsiOS"
-                                                             Width="22"
-                                                            Height="22"
+                                                             Width="16"
+                                                            Height="16"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                         </mah:HamburgerMenuIconItem.Icon>
@@ -189,8 +190,8 @@
                         
                         <mah:HamburgerMenuIconItem.Icon>
                             <iconPacks:PackIconVaadinIcons Kind="Workplace" 
-                                                             Width="22"
-                                                            Height="22"
+                                                             Width="16"
+                                                            Height="16"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                         </mah:HamburgerMenuIconItem.Icon>
@@ -203,8 +204,8 @@
                         
                         <mah:HamburgerMenuIconItem.Icon>
                             <iconPacks:PackIconMaterial Kind="HandCoin" 
-                                                             Width="22"
-                                                            Height="22"
+                                                             Width="16"
+                                                            Height="16"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                         </mah:HamburgerMenuIconItem.Icon>
@@ -221,8 +222,8 @@
                 <mah:HamburgerMenuItemCollection>
                     <mah:HamburgerMenuIconItem Label="Settings">
                         <mah:HamburgerMenuIconItem.Icon>
-                            <iconPacks:PackIconMaterial Width="22"
-                                                            Height="22"
+                            <iconPacks:PackIconMaterial Width="16"
+                                                            Height="16"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"
                                                             Kind="Cog" />
@@ -251,12 +252,7 @@
                         <mah:TransitioningContentControl Grid.Row="1"
                                                              Content="{Binding Tag}"
                                                              RestartTransitionOnContentChange="True"
-                                                             Transition="Up">
-                            <mah:TransitioningContentControl.ContentTemplate>
-                                <DataTemplate>
-                                    <ContentControl Content="{Binding Mode=OneWay}" />
-                                </DataTemplate>
-                            </mah:TransitioningContentControl.ContentTemplate>
+                                                             Transition="Right">
                         </mah:TransitioningContentControl>
                     </Grid>
                 </DataTemplate>
