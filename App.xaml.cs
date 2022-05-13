@@ -13,5 +13,6 @@ namespace Devis_Factures_Remake
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

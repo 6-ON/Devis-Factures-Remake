@@ -26,7 +26,7 @@ namespace Devis_Factures_Remake.Tabs
 
         public DevisTab()
         {
-            strings.Source = new Uri(@"resources\dictionaries\strings.xaml", UriKind.Relative);
+            strings.Source = App.Current.Resources.MergedDictionaries[3].Source;
             InitializeComponent();
             //just for test scrolling
             List<int> nums = new List<int>();

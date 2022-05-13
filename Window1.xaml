@@ -8,92 +8,43 @@
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:Tabs="clr-namespace:Devis_Factures_Remake.Tabs"
         xmlns:res="clr-namespace:Devis_Factures_Remake.Resources.Extras"
-    mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800"
+                 xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+                 d:DataContext="{d:DesignInstance local:Window1}"
+                 >
 
-
-    <!--<Window.Resources>
-        <ResourceDictionary>
-            --><!--  This is the template for all menu items. In this sample we use the icon items.  --><!--
-            <DataTemplate x:Key="HamburgerMenuItem" DataType="{x:Type mah:HamburgerMenuGlyphItem}">
-                <Grid Height="48">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type mah:HamburgerMenu}}, Path=CompactPaneLength}" />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <ContentControl Grid.Column="0"
-                                    Content="{Binding Icon}"
-                                    Focusable="False"
-                                    IsTabStop="False" />
-                    <TextBlock Grid.Column="1"
-                               VerticalAlignment="Center"
-                               FontSize="16"
-                               Text="{Binding Label}" />
-                </Grid>
-            </DataTemplate>
-
-            --><!--  This is the template for all option menu items.  --><!--
-            <DataTemplate x:Key="HamburgerOptionsMenuItem" DataType="{x:Type mah:HamburgerMenuItem}">
-                <Grid Height="48">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type mah:HamburgerMenu}}, Path=CompactPaneLength}" />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <ContentControl Grid.Column="0"
-                                    Content="{Binding Icon}"
-                                    Focusable="False"
-                                    IsTabStop="False" />
-                    <TextBlock Grid.Column="1"
-                               VerticalAlignment="Center"
-                               FontSize="16"
-                               Text="{Binding Label}" />
-                </Grid>
-            </DataTemplate>
-
-
-
-        </ResourceDictionary>
-    </Window.Resources>
-
-    <TabControl Style="{DynamicResource MahApps.Styles.TabControl.AnimatedSingleRow }">
-        <TabItem Header="Tableu De bord" >
-            <Tabs:Dashboard />
-        </TabItem>
-        <TabItem Header="Devis">
-            <Tabs:DevisTab/>
-        </TabItem>
-        <TabItem Header="Factures">
-            <Tabs:FactureTab/>
-        </TabItem>
-        <TabItem Header="Avoirs">
-            <Tabs:AvoirTab/>
-        </TabItem>
-        <TabItem Header="Clients">
-            <Tabs:ClientTab/>
-        </TabItem>
-        <TabItem Header="Produits">
-            <Tabs:ProduitsTab/>
-        </TabItem>
-        <TabItem Header="Stock">
-            <TabControl Style="{DynamicResource MahApps.Styles.TabControl.AnimatedSingleRow}">
-                <TabItem Header="Stock" Style="{DynamicResource stocktabsstyle}">
-                    <Tabs:StockTab/>
-                </TabItem>
-                <TabItem Header="Commandes de Fournisseures" Style="{DynamicResource stocktabsstyle}">
-                    <Tabs:CommandesFournisseursTab/>
-                </TabItem>
-
-            </TabControl>
-        </TabItem>
-        <TabItem Header="B.Livration">
-            <Tabs:BLivrationTab/>
-        </TabItem>
-
-
-        <TabItem Header="B.Livration">
-            <Tabs:FournisseursTab/>
-        </TabItem>
-
-    </TabControl>-->
-
+    <Grid>
+        <TextBlock Text="Chiffre D'affaire" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button Content="connect" Click="Button_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <lvc:PieChart LegendLocation="Bottom"  Hoverable="True" DataTooltip="{x:Null}" >
+            <lvc:PieChart.Series>
+                <lvc:PieSeries Title="Maria" Values="1" DataLabels="True"
+                               LabelPoint="{Binding PointLabel}" />
+                <lvc:PieSeries Title="Charles" Values="1" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>
+                <lvc:PieSeries Title="Frida" Values="1" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>
+                <lvc:PieSeries Title="Frederic" Values="1" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>                
+                <lvc:PieSeries Title="Frederic" Values="1" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>
+                <lvc:PieSeries Title="Frederic" Values="1" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>
+                <lvc:PieSeries Title="Frederic" Values="1" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>
+                <lvc:PieSeries Title="Frederic" Values="1" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>
+                <lvc:PieSeries Title="Frederic" Values="1" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>
+                <lvc:PieSeries Title="Frederic" Values="1" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>
+                <lvc:PieSeries Title="Frederic" Values="1" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>
+                <lvc:PieSeries Title="Frederic" Values="1" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>
+            </lvc:PieChart.Series>
+        </lvc:PieChart>
+    </Grid>
+ 
 </mah:MetroWindow>

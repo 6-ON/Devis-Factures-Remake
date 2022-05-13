@@ -25,7 +25,7 @@
 //        ResourceDictionary strings = new ResourceDictionary();
 //        public ClientTab()
 //        {
-//            strings.Source = new Uri(@"resources\dictionaries\strings.xaml", UriKind.Relative);
+//            strings.Source = App.Current.Resources.MergedDictionaries[3].Source;
 //            InitializeComponent();
 //            //just for test scrolling
 //            List<int> nums = new List<int>();
@@ -81,7 +81,7 @@ namespace Devis_Factures_Remake.Tabs
         ResourceDictionary strings = new ResourceDictionary();
         public ClientTab()
         {
-            strings.Source = new Uri(@"resources\dictionaries\strings.xaml", UriKind.Relative);
+            strings.Source = App.Current.Resources.MergedDictionaries[3].Source;
             InitializeComponent();
             //just for test scrolling
             List<int> nums = new List<int>();

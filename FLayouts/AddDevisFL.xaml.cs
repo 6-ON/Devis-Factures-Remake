@@ -25,7 +25,7 @@ namespace Devis_Factures_Remake.FLayouts
         ResourceDictionary strings = new ResourceDictionary();
         public AddDevisFL()
         {
-            strings.Source = new Uri(@"resources\dictionaries\strings.xaml", UriKind.Relative);
+            strings.Source = App.Current.Resources.MergedDictionaries[3].Source;
             InitializeComponent();
             //just for test scrolling
         }

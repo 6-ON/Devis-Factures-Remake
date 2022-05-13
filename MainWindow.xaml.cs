@@ -35,7 +35,8 @@ namespace Devis_Factures_Remake
 
         public MainWindow()
         {
-            strings.Source = new Uri(@"resources\dictionaries\strings.xaml", UriKind.Relative);
+            strings.Source = App.Current.Resources.MergedDictionaries[3].Source;
+            //strings.Source = App.Current.Resources.MergedDictionaries[3].Source;
             InitializeComponent();
         }
         public void TooltipHandller(object sender, MouseEventArgs e)
