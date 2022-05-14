@@ -80,9 +80,11 @@
 
         </ResourceDictionary>
     </Window.Resources>
-
-
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
         <Popup x:Name="AltTooltip"
                    AllowsTransparency="True">
 
@@ -258,9 +260,13 @@
                 </DataTemplate>
             </mah:HamburgerMenu.ContentTemplate>
         </mah:HamburgerMenu>
-
+        <StatusBar Grid.Row="1">
+            <StatusBarItem>Devis Facture Remake alpha version</StatusBarItem>
+            <Separator Style="{StaticResource MahApps.Styles.Separator.StatusBar}" />
+            <StatusBarItem>Selected Tab:</StatusBarItem>
+            <StatusBarItem Content="{Binding ElementName=HamburgerMenuControl, Path=Content.Title}" />
+        </StatusBar>
         <!--styles-->
-
         
         <Grid.Resources>
 
