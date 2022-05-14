@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
+using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,7 +15,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Globalization;
 using MahApps.Metro.Controls;
+using LiveCharts;
+using LiveCharts.Wpf;
 
 namespace Devis_Factures_Remake.Tabs
 {
@@ -22,19 +27,61 @@ namespace Devis_Factures_Remake.Tabs
     /// </summary>
     public partial class Dashboard : UserControl
     {
+        public string[] XLabels { get; set; }
         ResourceDictionary strings = new ResourceDictionary();
-        
+        string CON = (string)App.Current.Resources["connectionS"];
         public Dashboard()
         {
             InitializeComponent();
-            strings.Source = new Uri(@"/resources\dictionaries\strings.xaml", UriKind.Relative);
+            strings.Source = App.Current.Resources.MergedDictionaries[3].Source;
+            XLabels =  CultureInfo.GetCultureInfoByIetfLanguageTag("fr").DateTimeFormat.AbbreviatedMonthNames;
+
+            DataContext = this;
         }
+        public void OnLoad(object sender ,RoutedEventArgs args)
+        {
+            using (var ctn = new SqlConnection(CON))
+            {
+                string query = "select name,price from months ";
+                SqlCommand cmd = new SqlCommand(query, ctn);
+                // had dictionary fiha columns dyal month name and incoms dyalo 
+                Dictionary<string, decimal> rs = new Dictionary<string, decimal>();
+                try
+                {
+                    ctn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        rs.Add((string)reader[0], (decimal)reader[1]);
+                    }
+                    //clear old chart
+                    SeriesCollection updatedseries = new SeriesCollection();
+                    foreach (var item in rs)
+                    {
+                        updatedseries.Add(
+                                new PieSeries
+                                {
+                                    Title = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(item.Key.ToLower()) ,
+                                    Values = new ChartValues<decimal> { item.Value },
+                                    PushOut = 0,
+                                    DataLabels = true,
+                                    LabelPoint =  chartPoint => string.Format("{0} MAD {1:P}", chartPoint.Y, chartPoint.Participation)
+                                });
+                    }
+                    PieChar.Series.Clear();
+                    PieChar.Series.AddRange(updatedseries);
 
 
 
+                }
+                catch (SqlException)
+                {
 
-
-
+                    MessageBox.Show("Error !! ");
+                }
+            }
+        }
+        // tooltip setup
         public void TooltipHandller(object sender, MouseEventArgs e)
         {
             Button? button = sender as Button;
@@ -45,7 +92,6 @@ namespace Devis_Factures_Remake.Tabs
             AltTooltip.Visibility = Visibility.Collapsed;
             AltTooltip.IsOpen = false;
         }
-
         public void SetAltToolTip(Button target,object message)
         {
             AltTooltip.PlacementTarget = target;
@@ -62,5 +108,30 @@ namespace Devis_Factures_Remake.Tabs
             flyout.Content = new FLayouts.FournisseursFL();
             flyout.IsOpen = !flyout.IsOpen;
         }
+
+        private void CircleRadioChecked(object sender, RoutedEventArgs e)
+        {
+            HideAllChartsButThis(PieChar);
+        }
+        private void HistoRadioChecked(object sender, RoutedEventArgs e)
+        {
+            HideAllChartsButThis(HistoChar);
+        }
+        private void CurveRadioChecked(object sender, RoutedEventArgs e)
+        {
+            HideAllChartsButThis(CurveChar);
+        }
+        void HideAllChartsButThis(FrameworkElement target)
+        {
+            FrameworkElement[] charts = { PieChar, HistoChar,CurveChar};
+            //hide all
+            foreach (var chart in charts)
+                if (chart !=target && chart !=null)
+                    chart.Visibility = Visibility.Collapsed;
+            //show selected
+            if (target !=null)
+                target.Visibility = Visibility.Visible;
+        }
+
     }
 }

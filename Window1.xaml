@@ -17,34 +17,7 @@
     <Grid>
         <TextBlock Text="Chiffre D'affaire" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Button Content="connect" Click="Button_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Panel.ZIndex="1"/>
-        <lvc:PieChart LegendLocation="Bottom"  Hoverable="True" DataTooltip="{x:Null}" >
-            <lvc:PieChart.Series>
-                <lvc:PieSeries Title="Maria" Values="1" DataLabels="True"
-                               LabelPoint="{Binding PointLabel}" />
-                <lvc:PieSeries Title="Charles" Values="1" DataLabels="True" 
-                               LabelPoint="{Binding PointLabel}"/>
-                <lvc:PieSeries Title="Frida" Values="1" DataLabels="True" 
-                               LabelPoint="{Binding PointLabel}"/>
-                <lvc:PieSeries Title="Frederic" Values="1" DataLabels="True" 
-                               LabelPoint="{Binding PointLabel}"/>                
-                <lvc:PieSeries Title="Frederic" Values="1" DataLabels="True" 
-                               LabelPoint="{Binding PointLabel}"/>
-                <lvc:PieSeries Title="Frederic" Values="1" DataLabels="True" 
-                               LabelPoint="{Binding PointLabel}"/>
-                <lvc:PieSeries Title="Frederic" Values="1" DataLabels="True" 
-                               LabelPoint="{Binding PointLabel}"/>
-                <lvc:PieSeries Title="Frederic" Values="1" DataLabels="True" 
-                               LabelPoint="{Binding PointLabel}"/>
-                <lvc:PieSeries Title="Frederic" Values="1" DataLabels="True" 
-                               LabelPoint="{Binding PointLabel}"/>
-                <lvc:PieSeries Title="Frederic" Values="1" DataLabels="True" 
-                               LabelPoint="{Binding PointLabel}"/>
-                <lvc:PieSeries Title="Frederic" Values="1" DataLabels="True" 
-                               LabelPoint="{Binding PointLabel}"/>
-                <lvc:PieSeries Title="Frederic" Values="1" DataLabels="True" 
-                               LabelPoint="{Binding PointLabel}"/>
-            </lvc:PieChart.Series>
-        </lvc:PieChart>
+
     </Grid>
  
 </mah:MetroWindow>

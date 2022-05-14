@@ -8,13 +8,101 @@
              xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              mc:Ignorable="d" 
-             d:DesignHeight="509" d:DesignWidth="1118">
+             d:DesignHeight="509" d:DesignWidth="1118"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             Loaded="OnLoad">
     <Grid Background="White" Margin="10px">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="61.83*"/>
             <ColumnDefinition Width="38.17*"/>
         </Grid.ColumnDefinitions>
-        
+        <!--charts grid-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="48"/>
+                <RowDefinition/>
+                <RowDefinition Height="48"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock  Text="Chiffre D'affaire" Grid.ColumnSpan="2" FontSize="20" FontWeight="Bold"/>
+            <!--RADIO BUTTONS-->
+            <GroupBox Header="Graph" Grid.Row="1" VerticalAlignment="Top">
+                <Grid VerticalAlignment="Top" >
+                    <Grid.Resources>
+                        <Style TargetType="RadioButton" BasedOn="{StaticResource MahApps.Styles.RadioButton}" >
+                            <Setter Property="Margin" Value="0,10"/>
+                            <Setter Property="Grid.VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <RadioButton Checked="CircleRadioChecked" IsChecked="True" GroupName="GraphType" >Cirle</RadioButton>
+                    <RadioButton Checked="HistoRadioChecked" Grid.Row="1"  GroupName="GraphType">Histogram</RadioButton>
+                    <RadioButton Checked="CurveRadioChecked" Grid.Row="2"  GroupName="GraphType">Courbe</RadioButton>
+                </Grid>
+            </GroupBox>
+            <!--CHARTS-->
+            <Grid Grid.Row="1" Grid.Column="1" Margin="5">
+                <!--circel-->
+                <lvc:PieChart  Name="PieChar"  LegendLocation="Right" HoverPushOut="12"  Hoverable="True" >
+
+                    <lvc:PieChart.ChartLegend >
+                        <lvc:DefaultLegend  BulletSize="23"  FontWeight="SemiBold" />
+                    </lvc:PieChart.ChartLegend>
+                    <lvc:PieChart.DataTooltip>
+                        <lvc:DefaultTooltip FontWeight="DemiBold" SelectionMode="OnlySender"  Opacity="1"/>
+                    </lvc:PieChart.DataTooltip>
+
+                </lvc:PieChart>
+                <!--histo-->
+                <lvc:CartesianChart  Name="HistoChar"   LegendLocation="None" Hoverable="True" Visibility="Collapsed">
+                    <lvc:CartesianChart.Series >
+                        <lvc:ColumnSeries Title="hello" Values="2,6,6,5,1,3,4,5,6,15,18,8"/>
+
+                    </lvc:CartesianChart.Series>
+                    <lvc:CartesianChart.AxisX >
+                        <lvc:Axis FontSize="14"  Labels="{Binding XLabels}"  >
+                            <lvc:Axis.Separator >
+                                <lvc:Separator Step="1"></lvc:Separator>
+                            </lvc:Axis.Separator>
+                        </lvc:Axis>
+                    </lvc:CartesianChart.AxisX>
+                    <lvc:CartesianChart.AxisY>
+                        <lvc:Axis Title="Sold Apps" ></lvc:Axis>
+                    </lvc:CartesianChart.AxisY>
+                    <lvc:CartesianChart.DataTooltip>
+                        <lvc:DefaultTooltip SelectionMode="OnlySender"></lvc:DefaultTooltip>
+                    </lvc:CartesianChart.DataTooltip>
+                </lvc:CartesianChart>
+                <!--Curve-->
+                <lvc:CartesianChart  Name="CurveChar" Grid.Row="1" Grid.Column="1"  LegendLocation="None"   Hoverable="True" Visibility="Collapsed">
+                    <lvc:CartesianChart.Series>
+                        <lvc:LineSeries  Values="3,4,1,2,6,10,8,0,9,7,7,5"/>
+                    </lvc:CartesianChart.Series>
+                    <lvc:CartesianChart.AxisX>
+                        <lvc:Axis FontSize="14" Position="LeftBottom" Labels="{Binding XLabels}">
+                            <lvc:Axis.Separator >
+                                <lvc:Separator Step="1"></lvc:Separator>
+                            </lvc:Axis.Separator>
+                        </lvc:Axis>
+                    </lvc:CartesianChart.AxisX>
+                    <lvc:CartesianChart.AxisY >
+                        <lvc:Axis MinValue="0" Title="Sold Apps" ></lvc:Axis>
+                    </lvc:CartesianChart.AxisY>
+                    <lvc:CartesianChart.DataTooltip>
+                        <lvc:DefaultTooltip SelectionMode="SharedYInSeries"></lvc:DefaultTooltip>
+                    </lvc:CartesianChart.DataTooltip>
+                </lvc:CartesianChart>
+            </Grid>
+
+        </Grid>
         <Grid Grid.Column="1" >
             <Grid.RowDefinitions>
                 <RowDefinition/>
