@@ -94,29 +94,32 @@ namespace Devis_Factures_Remake
         public static extern bool SetForegroundWindow(IntPtr hWnd);
         private void AppLuncher(string fileName)
         {
-            bool isOpen = false;
+            
+
             Process[] proc = Process.GetProcessesByName(fileName);
             if (proc.Length != 0)
             {
                 proc[0].WaitForInputIdle();
                 IntPtr s = proc[0].MainWindowHandle;
                 SetForegroundWindow(s);
-                return;
             }
             else if (fileName == "notepad")
             {
-                Process.Start(fileName, "DevisFacteursNotes.txt");
-                return;
+                Process.Start(fileName, @"C:\Users\DELL\Desktop\DevisFacturesNotes.txt");
             }
             else if (fileName == "calculator")
             {
                 Process.Start("calc");
-                return;
             }
+
         }
 
         //Lunch the setting app
         private void btnSettings_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void btnCalc_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
         }
     }

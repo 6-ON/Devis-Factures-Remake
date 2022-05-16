@@ -145,7 +145,7 @@
                     <!--BUTTONS TOOLS-->
                                  <!--Row 1-->
                     <Button Content="{iconPacks:Unicons Kind=Edit,Width=32,Height=32}" Name="btnCreateDevis" Click="btnCreateDevis_Click"/>
-                    <Button Grid.Column="1" Content="{iconPacks:RemixIcon Kind=FilePaper2Fill,Width=32,Height=32}" Name="btnCreateFacture"  />
+                    <Button Grid.Column="1" Content="{iconPacks:RemixIcon Kind=FilePaper2Fill,Width=32,Height=32}" Name="btnCreateFacture"  Click="btnCreateFacture_Click" />
                     <Button Grid.Column="2" Content="{iconPacks:FontAwesome Kind=WalletSolid,Width=32,Height=32}" Name="btnCreateAvoir" />
                     <Button Grid.Column="3" Content="{iconPacks:Material Kind=HandCoin,Width=32,Height=32}" Name="btnCreateBL" />
                                 <!--Row 2-->

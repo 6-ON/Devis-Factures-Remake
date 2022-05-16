@@ -141,5 +141,14 @@ namespace Devis_Factures_Remake.Tabs
             flyout.Content = new FLayouts.AddDevisFL();
             flyout.IsOpen = !flyout.IsOpen;
         }
+
+        private void btnCreateFacture_Click(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            object obj = parentWindow.FindName("testfl");
+            Flyout flyout = (Flyout)obj;
+            flyout.Content = new FLayouts.AddFactureFL();
+            flyout.IsOpen = !flyout.IsOpen;
+        }
     } 
 }

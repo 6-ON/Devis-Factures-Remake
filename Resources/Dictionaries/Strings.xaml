@@ -175,4 +175,8 @@
     <s:String x:Key="Suivi">Suivi - Facteurs d'acompte Facteur de solde</s:String>
     <s:String x:Key="DocumentLies">Document lies</s:String>
     <s:String x:Key="archive">Archive directement</s:String>
+    
+    <s:String x:Key="transformer">Transformer</s:String>
+    <s:String x:Key="valider">valider</s:String>
+    <s:String x:Key="RegAcomptes">Réglements/Acomptes</s:String>
 </ResourceDictionary>

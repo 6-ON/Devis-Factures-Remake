@@ -13,25 +13,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MahApps.Metro.Controls;
-namespace Devis_Factures_Remake.Tabs
+
+namespace Devis_Factures_Remake.FLayouts
 {
     /// <summary>
-    /// Interaction logic for FactureTab.xaml
+    /// Interaction logic for AddDevisFL.xaml
     /// </summary>
-    public partial class FactureTab : UserControl
+    public partial class AddFactureFL : UserControl
     {
         ResourceDictionary strings = new ResourceDictionary();
-        public FactureTab()
+        public AddFactureFL()
         {
             strings.Source = App.Current.Resources.MergedDictionaries[3].Source;
             InitializeComponent();
             //just for test scrolling
-            List<int> nums = new List<int>();
-            for (int i = 0; i < 100; ++i)
-                nums.Add(i);
-
-            dgFactures.ItemsSource = nums;
         }
         public void TooltipHandller(object sender, MouseEventArgs e)
         {
@@ -51,24 +46,6 @@ namespace Devis_Factures_Remake.Tabs
             AltTooltip.IsOpen = true;
             Context.PopupText.Text = message.ToString();
         }
-
-        private void btnReglemetnt_Click(object sender, RoutedEventArgs e)
-        {
-            Window parentWindow = Window.GetWindow(this);
-            object obj = parentWindow.FindName("testfl");
-            Flyout flyout = (Flyout)obj;
-            flyout.Content = new FLayouts.ReglementFlyout();
-            flyout.Header = "Reglement";
-            flyout.IsOpen = !flyout.IsOpen;
-        }
-
-        private void btnCreate_Click(object sender, RoutedEventArgs e)
-        {
-            Window parentWindow = Window.GetWindow(this);
-            object obj = parentWindow.FindName("testfl");
-            Flyout flyout = (Flyout)obj;
-            flyout.Content = new FLayouts.FournisseursFL();
-            flyout.IsOpen = !flyout.IsOpen;
-        }
     }
 }
+

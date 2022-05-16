@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Devis_Factures_Remake.FLayouts.AddDevisFL"
+﻿<UserControl x:Class="Devis_Factures_Remake.FLayouts.AddFactureFL"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -372,7 +372,7 @@
                         BorderBrush="AliceBlue"   
                         FontSize="14"    
                     >
-                        <TextBlock Text="{DynamicResource transformerFactOuBl}" TextWrapping="Wrap" TextAlignment="Center"/>
+                        <TextBlock Text="{DynamicResource transformer}" TextWrapping="Wrap" TextAlignment="Center"/>
 
                     </Button>
                     <!--Button sex-->
@@ -383,7 +383,7 @@
                         BorderBrush="AliceBlue"   
                         FontSize="14"    
                     >
-                        <TextBlock Text="{DynamicResource copierDansUnNouveauDevis}" TextWrapping="Wrap" TextAlignment="Center"/>
+                        <TextBlock Text="{DynamicResource valider}" TextWrapping="Wrap" TextAlignment="Center"/>
 
                     </Button>
                     <!--Button seven-->
@@ -394,7 +394,7 @@
                         BorderBrush="AliceBlue"   
                         FontSize="14"    
                     >
-                        <TextBlock Text="{DynamicResource Suivi}" TextWrapping="Wrap" TextAlignment="Center"/>
+                        <TextBlock Text="{DynamicResource copierDansUnNouveauDevis}" TextWrapping="Wrap" TextAlignment="Center"/>
 
                     </Button>
                     <!--Button eight-->
@@ -416,7 +416,7 @@
                         BorderBrush="AliceBlue"   
                         FontSize="14"    
                     >
-                        <TextBlock Text="{DynamicResource archive}" TextWrapping="Wrap" TextAlignment="Center"/>
+                        <TextBlock Text="{DynamicResource RegAcomptes}" TextWrapping="Wrap" TextAlignment="Center"/>
 
                     </Button>
 
