@@ -158,15 +158,21 @@
     <s:String x:Key="emptyLbl">.</s:String>
     
     <s:String x:Key="infoClient">Informations Client</s:String>
+    <s:String x:Key="voireFicheClient">Voire ficher Client</s:String>
+    <s:String x:Key="changerClient">Changer client</s:String>
+    <s:String x:Key="effacerClient">Effacer client</s:String>
+    <s:String x:Key="selectClient">Sélectionner client</s:String>
     <s:String x:Key="adresseChantier">Adresse Chantier</s:String>
     <s:String x:Key="observationLbl">Observations</s:String>
     <s:String x:Key="conditionPaiementLbl">Condition de paiement</s:String>
     <s:String x:Key="AnnotationLbl">Annotation</s:String>
     <s:String x:Key="MdifierLinesDocLbl">Modifier les ligne du document</s:String>
-    <s:String x:Key="SendByEmailLbl">Envoyer par email</s:String>
+    <s:String x:Key="Apercu">Aperçu/Impression</s:String>
     <s:String x:Key="pdf">Pdf</s:String>
-
-
-
-
+    <s:String x:Key="SendByEmailLbl">Envoyer par email</s:String>
+    <s:String x:Key="transformerFactOuBl">Transformer en facteur ou BL (suivi acomptes)</s:String>
+    <s:String x:Key="copierDansUnNouveauDevis">Copier dans un nouveau devis</s:String>
+    <s:String x:Key="Suivi">Suivi - Facteurs d'acompte Facteur de solde</s:String>
+    <s:String x:Key="DocumentLies">Document lies</s:String>
+    <s:String x:Key="archive">Archive directement</s:String>
 </ResourceDictionary>

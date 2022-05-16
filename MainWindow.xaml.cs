@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Automation;
@@ -16,7 +17,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ControlzEx.Standard;
 using MahApps.Metro.Controls;
+using System.Security;
 
 namespace Devis_Factures_Remake
 {
@@ -58,17 +61,6 @@ namespace Devis_Factures_Remake
             Context.PopupText.Text = message.ToString();
         }
 
-        private void btnSettings_Click(object sender, RoutedEventArgs e)
-        {
-            Process[] proc = Process.GetProcessesByName("calculator");
-
-
-            if (proc.Length != 0)
-            {
-                proc[0].Kill();
-            }
-            Process.Start("calc");
-        }
 
         //hambugermwnu behaviour
         private void HamburgerMenuControl_OnItemInvoked(object sender, HamburgerMenuItemInvokedEventArgs e)
@@ -79,6 +71,53 @@ namespace Devis_Factures_Remake
             //    // You can close the menu if an item was selected
             //    this.HamburgerMenuControl.IsPaneOpen = false;
             //}
+        }
+
+        //Lunch the calculator app
+        private void btnCalc_Click(object sender, RoutedEventArgs e)
+        {
+            AppLuncher("calculator");
+        }
+        //Lunch the notes app
+        private void btnNotes_Click(object sender, RoutedEventArgs e)
+        {
+            AppLuncher("notepad");
+        }
+        //Lunch the calendar app
+        private void btnCalendar_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        // //////////////////////////////////////////////////////////////
+
+        [DllImport("USER32.DLL")]
+        public static extern bool SetForegroundWindow(IntPtr hWnd);
+        private void AppLuncher(string fileName)
+        {
+            bool isOpen = false;
+            Process[] proc = Process.GetProcessesByName(fileName);
+            if (proc.Length != 0)
+            {
+                proc[0].WaitForInputIdle();
+                IntPtr s = proc[0].MainWindowHandle;
+                SetForegroundWindow(s);
+                return;
+            }
+            else if (fileName == "notepad")
+            {
+                Process.Start(fileName, "DevisFacteursNotes.txt");
+                return;
+            }
+            else if (fileName == "calculator")
+            {
+                Process.Start("calc");
+                return;
+            }
+        }
+
+        //Lunch the setting app
+        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

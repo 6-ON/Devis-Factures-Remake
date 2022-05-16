@@ -31,9 +31,9 @@
     <mah:MetroWindow.RightWindowCommands>
         <mah:WindowCommands>
             <Button Content="{iconPacks:MaterialDesign Kind=Settings}"  Name="btnSettings" MouseEnter="TooltipHandller" MouseLeave="TooltipCloseHandller" Click="btnSettings_Click"/>
-            <Button Content="{iconPacks:Material Kind=CalculatorVariant}" Name="btnCalc" MouseEnter="TooltipHandller" MouseLeave="TooltipCloseHandller"/>
-            <Button Content="{iconPacks:Material Kind=ClipboardEdit}" Name="btnNotes" MouseEnter="TooltipHandller" MouseLeave="TooltipCloseHandller"/>
-            <Button Content="{iconPacks:FontAwesome Kind=CalendarAltSolid}" Name="btnCalendar" MouseEnter="TooltipHandller" MouseLeave="TooltipCloseHandller"/>
+            <Button Content="{iconPacks:Material Kind=CalculatorVariant}" Name="btnCalc" MouseEnter="TooltipHandller" MouseLeave="TooltipCloseHandller" Click="btnCalc_Click"/>
+            <Button Content="{iconPacks:Material Kind=ClipboardEdit}" Name="btnNotes" MouseEnter="TooltipHandller" MouseLeave="TooltipCloseHandller" Click="btnNotes_Click"/>
+            <Button Content="{iconPacks:FontAwesome Kind=CalendarAltSolid}" Name="btnCalendar" MouseEnter="TooltipHandller" MouseLeave="TooltipCloseHandller" Click="btnCalendar_Click"/>
 
         </mah:WindowCommands>
 
