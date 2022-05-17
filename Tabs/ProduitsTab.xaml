@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Devis_Factures_Remake.Tabs"
              
-             
+             Loaded="UserControl_Loaded"
              xmlns:Extras="clr-namespace:Devis_Factures_Remake.Resources.Extras"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"

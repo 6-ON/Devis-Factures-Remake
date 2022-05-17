@@ -32,6 +32,9 @@ namespace Devis_Factures_Remake.Tabs
             strings.Source = App.Current.Resources.MergedDictionaries[3].Source;
             InitializeComponent();
             
+        }
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
             FillDataGrid();
         }
         public void TooltipHandller(object sender, MouseEventArgs e)
@@ -104,5 +107,7 @@ namespace Devis_Factures_Remake.Tabs
             }
 
         }
+
+
     }
 }

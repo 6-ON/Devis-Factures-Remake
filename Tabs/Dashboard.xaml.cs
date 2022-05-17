@@ -41,7 +41,7 @@ namespace Devis_Factures_Remake.Tabs
 
             DataContext = this;
         }
-        public void OnLoad(object sender ,RoutedEventArgs args)
+        void GetDataFromDB()
         {
             using (var ctn = new SqlConnection(CON))
             {
@@ -59,17 +59,19 @@ namespace Devis_Factures_Remake.Tabs
                     }
                     //clear old chart
                     SeriesCollection updatedseries = new SeriesCollection();
+                    int i = 0;
                     foreach (var item in rs)
                     {
                         updatedseries.Add(
                                 new PieSeries
                                 {
-                                    Title = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(item.Key.ToLower()) ,
+                                    Title = CultureInfo.GetCultureInfoByIetfLanguageTag("fr").DateTimeFormat.MonthNames[i],
                                     Values = new ChartValues<decimal> { item.Value },
                                     PushOut = 0,
                                     DataLabels = true,
-                                    LabelPoint =  chartPoint => string.Format("{0} MAD {1:P}", chartPoint.Y, chartPoint.Participation)
+                                    LabelPoint = chartPoint => string.Format("{0:P}", chartPoint.Participation)
                                 });
+                        i++;
                     }
                     PieChar.Series.Clear();
                     PieChar.Series.AddRange(updatedseries);
@@ -83,6 +85,10 @@ namespace Devis_Factures_Remake.Tabs
                     MessageBox.Show("Error !! ");
                 }
             }
+        }
+        public void OnLoad(object sender ,RoutedEventArgs args)
+        {
+            GetDataFromDB();
         }
         // tooltip setup
         public void TooltipHandller(object sender, MouseEventArgs e)
@@ -174,32 +180,10 @@ namespace Devis_Factures_Remake.Tabs
 
         }
 
-        private void ListProcesses()
-        {
-            
-        }
-        public  async Task WorkingProcesses()
-        {
-            List<string> processesNames = new List<string>();
-            Process[] processCollection = Process.GetProcesses();
-            foreach (Process p in processCollection)
-            {
-                processesNames.Add(p.ProcessName);
-            }
-
-            await File.WriteAllLinesAsync(@"C:\Users\DELL\Desktop\DevisFacturesNotes.txt", processesNames);
-        }
 
         private void btnAcessEmail_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("chrome");
-            List<string> processesNames = new List<string>();
-            Process[] processCollection = Process.GetProcesses();
-            foreach (Process p in processCollection)
-            {
-                processesNames.Add(p.ProcessName);
-            }
-                File.AppendAllLines(@"C:\Users\DELL\Desktop\DevisFacturesNotes.txt", processesNames);
+
         }
     } 
 }
