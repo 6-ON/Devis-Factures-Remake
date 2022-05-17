@@ -6,6 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <s:String x:Key="connectionS">Data Source=localhost;Initial Catalog=chartstest;Integrated Security=True</s:String>
+            <s:String x:Key="conString">Data Source=localhost;Initial Catalog=Tabs;Integrated Security=True</s:String>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />

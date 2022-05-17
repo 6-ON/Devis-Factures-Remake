@@ -131,6 +131,7 @@ Create Table Produit(
 	tax nvarchar(50)  not null,
 	totalTTC INT not null,
 	--produit Image
-	img image ,
+	img nvarchar(4000) ,
 );
 
+select * from Produit

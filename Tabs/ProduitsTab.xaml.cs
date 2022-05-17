@@ -14,6 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Controls.Primitives;
 using MahApps.Metro.Controls;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
 
 namespace Devis_Factures_Remake.Tabs
 {
@@ -28,12 +31,8 @@ namespace Devis_Factures_Remake.Tabs
         {
             strings.Source = App.Current.Resources.MergedDictionaries[3].Source;
             InitializeComponent();
-            //just for test scrolling
-            List<int> nums = new List<int>();
-            for (int i = 0; i < 100; ++i)
-                nums.Add(i);
-
-            dgProduits.ItemsSource = nums;
+            
+            FillDataGrid();
         }
         public void TooltipHandller(object sender, MouseEventArgs e)
         {
@@ -70,6 +69,40 @@ namespace Devis_Factures_Remake.Tabs
             Flyout flyout = (Flyout)obj;
             flyout.Content = new FLayouts.AddProduit();
             flyout.IsOpen = !flyout.IsOpen;
+        }
+
+        private void FillDataGrid()
+
+        {
+
+            string ConString = (string)App.Current.Resources["conString"];
+
+            string CmdString = string.Empty;
+
+            using (SqlConnection con = new SqlConnection(ConString))
+
+            {
+
+                CmdString = "SELECT ref, designation, pVente, totalTTC, pAchat, famile, fournisseur FROM Produit";
+
+                SqlCommand cmd = new SqlCommand(CmdString, con);
+
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable("Produit");
+
+                sda.Fill(dt);
+
+                ////just for test scrolling
+                //List<int> nums = new List<int>();
+                //for (int i = 0; i < 100; ++i)
+                //    nums.Add(i);
+
+                //dgProduits.ItemsSource = nums;
+                dgProduits.ItemsSource = dt.DefaultView;
+
+            }
+
         }
     }
 }

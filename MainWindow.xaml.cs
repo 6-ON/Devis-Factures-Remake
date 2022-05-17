@@ -20,6 +20,8 @@ using System.Windows.Shapes;
 using ControlzEx.Standard;
 using MahApps.Metro.Controls;
 using System.Security;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace Devis_Factures_Remake
 {
@@ -127,5 +129,6 @@ namespace Devis_Factures_Remake
         private void btnCalc_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
         }
+
     }
 }

@@ -43,16 +43,16 @@
                 </Grid>
             </Grid> 
             <Grid Grid.Row="1">
-                <DataGrid  Name="dgProduits" Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DataGrid}">
+                <DataGrid  Name="dgProduits" AutoGenerateColumns="False" Style="{DynamicResource Devis_Factures_Remake.Resources.Styles.GlobalControlsStyles.DataGrid}">
                     <DataGrid.Columns >
-                        <DataGridTextColumn Header="{DynamicResource refProdCol}" MinWidth="150" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource desProdCol}" MinWidth="150" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource venteProdCol}" MinWidth="90" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource puttcProdCol}" MinWidth="90" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource acahtProdCol}" MinWidth="90" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource familleProdCol}" MinWidth="150" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource fornProdCol}" MinWidth="150" Binding="{Binding}"/>
-                        <DataGridTextColumn Header="{DynamicResource refForniProdCol}" MinWidth="150" Binding="{Binding}"/>
+                        <DataGridTextColumn Header="{DynamicResource refProdCol}" MinWidth="150" Binding="{Binding ref}"/>
+                        <DataGridTextColumn Header="{DynamicResource desProdCol}" MinWidth="150" Binding="{Binding designation}"/>
+                        <DataGridTextColumn Header="{DynamicResource venteProdCol}" MinWidth="90" Binding="{Binding pVente}"/>
+                        <DataGridTextColumn Header="{DynamicResource puttcProdCol}" MinWidth="90" Binding="{Binding totalTTC}"/>
+                        <DataGridTextColumn Header="{DynamicResource acahtProdCol}" MinWidth="90" Binding="{Binding pAchat}"/>
+                        <DataGridTextColumn Header="{DynamicResource familleProdCol}" MinWidth="150" Binding="{Binding famile}"/>
+                        <DataGridTextColumn Header="{DynamicResource fornProdCol}" MinWidth="150" Binding="{Binding fournisseur}"/>
+                        <DataGridTextColumn Header="{DynamicResource refForniProdCol}" MinWidth="150" Binding="{Binding fournisseur}"/>
                      
                     </DataGrid.Columns>
                 </DataGrid>
