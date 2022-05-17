@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <Folder Include="Resources\Fonts\" />
+    <Folder Include="Resources\Document\" />
   </ItemGroup>
 
   <ItemGroup>

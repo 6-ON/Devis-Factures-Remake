@@ -57,7 +57,7 @@ namespace Devis_Factures_Remake.Tabs
             Window parentWindow = Window.GetWindow(this);
             object obj = parentWindow.FindName("testfl");
             Flyout flyout = (Flyout)obj;
-            flyout.Content = new FLayouts.StockOverview();
+            flyout.Content = new FLayouts.FournisseursFL();
             flyout.IsOpen = !flyout.IsOpen;
         }
 

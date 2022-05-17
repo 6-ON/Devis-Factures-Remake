@@ -55,15 +55,16 @@
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <TextBox Grid.Row="0"   
                      mah:TextBoxHelper.Watermark="{DynamicResource refProdCol}" 
                      />
-                    <ComboBox Grid.Column="1"
+                    <ComboBox Grid.Row="1"
                               Margin="5"
                               mah:TextBoxHelper.Watermark="{DynamicResource Unite}"
                               >
@@ -72,17 +73,17 @@
                         <ComboBoxItem Content="test"/>
                         <ComboBoxItem Content="test"/>
                     </ComboBox>
-                    <TextBox Grid.Row="1"  MaxLines="3" Grid.ColumnSpan="2"
+                    <TextBox Grid.Row="2"  MaxLines="3"
                      mah:TextBoxHelper.Watermark="{DynamicResource desProdCol}" 
                      />
                     
-                    <ComboBox Grid.Row="2"  
+                    <ComboBox Grid.Row="3"  
                      mah:TextBoxHelper.Watermark="{DynamicResource familleProdCol}" 
                      />
-                    <ComboBox Grid.Row="2" Grid.Column="1"  
+                    <ComboBox Grid.Row="4" Grid.Column="1"  
                      mah:TextBoxHelper.Watermark="{DynamicResource fornProdCol}" 
                      />
-                    <TextBox Grid.Row="3"  
+                    <TextBox Grid.Row="5"  
                      mah:TextBoxHelper.Watermark="{DynamicResource acahtProdCol}" 
                      
                              />
@@ -140,10 +141,12 @@
                     HorizontalAlignment="Left"
                     Content="attacher"
                     FontSize="14"
-                    Padding="20,0"
+                    Padding="20,0" Click="btnAttach_Click"
+                     Name="btnAttach"
+                        
                     />
                     <Grid Grid.Row="1" Background="LightGray" Margin="5">
-                        <Image Name="imageProduct" ></Image>
+                        <Image Name="imageProduct" Source="{Binding proImage}"></Image>
                     </Grid>
                 </Grid>
             </ScrollViewer>

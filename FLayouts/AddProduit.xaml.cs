@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,6 +47,29 @@ namespace Devis_Factures_Remake.FLayouts
             AltTooltip.Placement = PlacementMode.Bottom;
             AltTooltip.IsOpen = true;
             Context.PopupText.Text = message.ToString();
+        }
+
+
+        SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Tabs;Integrated Security=True");
+        private void btnAttach_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.InitialDirectory = "c:\\";
+            dlg.Filter = "Image files (*.jpg)|*.jpg|All Files (*.*)|*.*";
+            dlg.RestoreDirectory = true;
+
+            bool? result = dlg.ShowDialog();
+            if (result == true)
+            {
+                string selectedFileName = dlg.FileName;
+                //FileNameLabel.Content = selectedFileName;
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(selectedFileName);
+                bitmap.EndInit();
+                imageProduct.Source = bitmap;
+            }
+
         }
     }
 }
