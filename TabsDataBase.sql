@@ -134,4 +134,4 @@ Create Table Produit(
 	img nvarchar(4000) ,
 );
 
-select * from Produit
+SELECT ref, unite, designation, pVente, totalTTC, pAchat, famile, fournisseur FROM Produit
