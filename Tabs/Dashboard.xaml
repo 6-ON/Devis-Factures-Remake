@@ -19,15 +19,14 @@
         <!--charts grid-->
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="48"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition/>
-                <RowDefinition Height="48"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="120"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock  Text="Chiffre D'affaire" Grid.ColumnSpan="2" FontSize="20" FontWeight="Bold"/>
+            <TextBlock Padding="0,10"  Text="Chiffre D'affaire" Grid.ColumnSpan="2" FontSize="20" FontWeight="Bold"/>
             <!--RADIO BUTTONS-->
             <GroupBox Header="Graph" Grid.Row="1" VerticalAlignment="Top">
                 <Grid VerticalAlignment="Top" >
@@ -75,10 +74,10 @@
                         </lvc:Axis>
                     </lvc:CartesianChart.AxisX>
                     <lvc:CartesianChart.AxisY>
-                        <lvc:Axis Title="Sold Apps" ></lvc:Axis>
+                        <lvc:Axis Title="Moantant" ></lvc:Axis>
                     </lvc:CartesianChart.AxisY>
                     <lvc:CartesianChart.DataTooltip>
-                        <lvc:DefaultTooltip SelectionMode="OnlySender"></lvc:DefaultTooltip>
+                        <lvc:DefaultTooltip SelectionMode="SharedXValues"></lvc:DefaultTooltip>
                     </lvc:CartesianChart.DataTooltip>
                 </lvc:CartesianChart>
                 <!--Curve-->
@@ -94,10 +93,10 @@
                         </lvc:Axis>
                     </lvc:CartesianChart.AxisX>
                     <lvc:CartesianChart.AxisY >
-                        <lvc:Axis MinValue="0" Title="Sold Apps" ></lvc:Axis>
+                        <lvc:Axis MinValue="0" Title="Montant" ></lvc:Axis>
                     </lvc:CartesianChart.AxisY>
                     <lvc:CartesianChart.DataTooltip>
-                        <lvc:DefaultTooltip SelectionMode="SharedYInSeries"></lvc:DefaultTooltip>
+                        <lvc:DefaultTooltip ShowSeries="False" SelectionMode="SharedXValues"></lvc:DefaultTooltip>
                     </lvc:CartesianChart.DataTooltip>
                 </lvc:CartesianChart>
             </Grid>

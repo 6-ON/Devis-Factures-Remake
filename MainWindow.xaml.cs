@@ -20,6 +20,7 @@ using System.Windows.Shapes;
 using ControlzEx.Standard;
 using MahApps.Metro.Controls;
 using System.Security;
+using System.IO;
 
 namespace Devis_Factures_Remake
 {
@@ -76,12 +77,21 @@ namespace Devis_Factures_Remake
         //Lunch the calculator app
         private void btnCalc_Click(object sender, RoutedEventArgs e)
         {
-            AppLuncher("calculator");
+            AppLuncher("calc");
         }
         //Lunch the notes app
         private void btnNotes_Click(object sender, RoutedEventArgs e)
         {
-            AppLuncher("notepad");
+            string folderpath = @$"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\DevisNotes\";
+            string notepath = folderpath + $"{DateTime.Now.ToString("dd'-'MM'-'yyyy'-'hh'-'mm'-'ss")}.txt";
+            if (!Directory.Exists(folderpath))
+                Directory.CreateDirectory(folderpath);
+
+            FileStream fs = File.Create(notepath);
+            fs.Close();
+            Process.Start("notepad.exe",notepath);
+
+  
         }
         //Lunch the calendar app
         private void btnCalendar_Click(object sender, RoutedEventArgs e)
