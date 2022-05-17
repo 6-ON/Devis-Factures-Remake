@@ -19,6 +19,9 @@ using System.Globalization;
 using MahApps.Metro.Controls;
 using LiveCharts;
 using LiveCharts.Wpf;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.IO;
 
 namespace Devis_Factures_Remake.Tabs
 {
@@ -149,6 +152,54 @@ namespace Devis_Factures_Remake.Tabs
             Flyout flyout = (Flyout)obj;
             flyout.Content = new FLayouts.AddFactureFL();
             flyout.IsOpen = !flyout.IsOpen;
+        }
+
+        [DllImport("USER32.DLL")]
+        public static extern bool SetForegroundWindow(IntPtr hWnd);
+        private void AppLuncher(string fileName)
+        {
+
+
+            Process[] proc = Process.GetProcessesByName(fileName);
+            if (proc.Length != 0)
+            {
+                proc[0].WaitForInputIdle();
+                IntPtr s = proc[0].MainWindowHandle;
+                SetForegroundWindow(s);
+            }
+            else
+            {
+                Process.Start(fileName);
+            }
+
+        }
+
+        private void ListProcesses()
+        {
+            
+        }
+        public  async Task WorkingProcesses()
+        {
+            List<string> processesNames = new List<string>();
+            Process[] processCollection = Process.GetProcesses();
+            foreach (Process p in processCollection)
+            {
+                processesNames.Add(p.ProcessName);
+            }
+
+            await File.WriteAllLinesAsync(@"C:\Users\DELL\Desktop\DevisFacturesNotes.txt", processesNames);
+        }
+
+        private void btnAcessEmail_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("chrome");
+            List<string> processesNames = new List<string>();
+            Process[] processCollection = Process.GetProcesses();
+            foreach (Process p in processCollection)
+            {
+                processesNames.Add(p.ProcessName);
+            }
+                File.AppendAllLines(@"C:\Users\DELL\Desktop\DevisFacturesNotes.txt", processesNames);
         }
     } 
 }

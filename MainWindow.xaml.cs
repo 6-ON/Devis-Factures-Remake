@@ -86,6 +86,7 @@ namespace Devis_Factures_Remake
         //Lunch the calendar app
         private void btnCalendar_Click(object sender, RoutedEventArgs e)
         {
+            AppLuncher("chrome");
         }
 
         // //////////////////////////////////////////////////////////////
@@ -94,7 +95,7 @@ namespace Devis_Factures_Remake
         public static extern bool SetForegroundWindow(IntPtr hWnd);
         private void AppLuncher(string fileName)
         {
-            
+
 
             Process[] proc = Process.GetProcessesByName(fileName);
             if (proc.Length != 0)
@@ -110,6 +111,10 @@ namespace Devis_Factures_Remake
             else if (fileName == "calculator")
             {
                 Process.Start("calc");
+            }
+            else if (fileName == "chrome")
+            {
+                Process.Start("chrome");
             }
 
         }
