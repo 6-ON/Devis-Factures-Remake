@@ -50,7 +50,7 @@
             <!--CHARTS-->
             <Grid Grid.Row="1" Grid.Column="1" Margin="5">
                 <!--circel-->
-                <lvc:PieChart  Name="PieChar"  LegendLocation="Right" HoverPushOut="12"  Hoverable="True" >
+                <lvc:PieChart  InnerRadius="100" Name="PieChar"  LegendLocation="Right" HoverPushOut="12"  Hoverable="True" >
 
                     <lvc:PieChart.ChartLegend >
                         <lvc:DefaultLegend  BulletSize="23"  FontWeight="SemiBold" />

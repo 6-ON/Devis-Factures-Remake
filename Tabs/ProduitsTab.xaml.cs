@@ -64,6 +64,30 @@ namespace Devis_Factures_Remake.Tabs
             flyout.Content = new FLayouts.AddProduit();
             flyout.IsOpen = !flyout.IsOpen;
         }
+        void reloaduc(object s,RoutedEventHandler e)
+        {
+            string ConString = (string)App.Current.Resources["conString"];
+
+            string CmdString = string.Empty;
+
+            using (SqlConnection con = new SqlConnection(ConString))
+
+            {
+
+                CmdString = "SELECT ref, designation, pVente, totalTTC, pAchat, famile, fournisseur FROM Produit";
+
+                SqlCommand cmd = new SqlCommand(CmdString, con);
+
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable("Produit");
+
+                sda.Fill(dt);
+
+                dgProduits.ItemsSource = dt.DefaultView;
+
+            }
+        }
 
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
@@ -96,12 +120,6 @@ namespace Devis_Factures_Remake.Tabs
 
                 sda.Fill(dt);
 
-                ////just for test scrolling
-                //List<int> nums = new List<int>();
-                //for (int i = 0; i < 100; ++i)
-                //    nums.Add(i);
-
-                //dgProduits.ItemsSource = nums;
                 dgProduits.ItemsSource = dt.DefaultView;
 
             }

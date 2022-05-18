@@ -134,4 +134,10 @@ Create Table Produit(
 	img nvarchar(4000) ,
 );
 
-SELECT ref, unite, designation, pVente, totalTTC, pAchat, famile, fournisseur FROM Produit
+use Tabs
+SELECT ref, unite, designation, pVente, totalTTC, pAchat, famile, fournisseur FROM Produit;
+select * From Produit
+
+insert into Produit (unite, designation, famile, fournisseur, pAchat, pVente, mergeEnTax, tax, totalTTC, img) values(2, 'computer', 'info', 'Amin', 100, 200, 300, 400, 500, 'C:\Users\DELL\ElgountariAyoub\NestedFolders\DestopWallpaper\Thinking\code-hacker-1366x768.jpg')
+
+Delete From Produit Where unite=2
